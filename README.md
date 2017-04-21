@@ -1,3 +1,5 @@
 # CS175
 Group Project CS175
-hello how are you
+Member: Quan Le
+        Chuong Nghiem
+         Wicho Vargas
