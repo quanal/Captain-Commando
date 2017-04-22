@@ -32,17 +32,17 @@ Tool : we will use natural language tool kit, sklearn, tensorflow.
 
 VI. Evaluation and conclusions:(30 points)
 Evaluation plan:
-	Quantitative evaluation:
-	This is a set of  capabilities that the Agent has to successfully perform.
+Quantitative evaluation:
+This is a set of  capabilities that the Agent has to successfully perform.
 
-	- Agent is able to classify a command from a sentence.
-	- Agent is able to extract the verb and the noun from the command.
-	- Agent has to be able to find the shortest path to the the object.
-	- Agent has to be able to retrieve adjectives.
+- Agent is able to classify a command from a sentence.
+- Agent is able to extract the verb and the noun from the command.
+- Agent has to be able to find the shortest path to the the object.
+- Agent has to be able to retrieve adjectives.
 	
-	Qualitative analysis:
-	Performance of the agent will be measured by how well it is able to classify a command.
-	This will be done by creating a dictionary where the key is text and the value is a ‘0’ or ‘1’. 
-	0 = not a command and 1 = command. This Dictionary will be manually built. Also, we will test the performance of our agent by 		passing a list of all the keys in the dictionary to our agent and our agent will generate its own dictionary with its 			predictions for each element in the input. Then, we will compare both dictionaries and measure a similarity percentage. 
-	Furthermore, the accuracy of classifying a verb and a noun will be tested similarly. 
+Qualitative analysis:
+Performance of the agent will be measured by how well it is able to classify a command.
+This will be done by creating a dictionary where the key is text and the value is a ‘0’ or ‘1’. 
+0 = not a command and 1 = command. This Dictionary will be manually built. Also, we will test the performance of our agent by 		passing a list of all the keys in the dictionary to our agent and our agent will generate its own dictionary with its 			predictions for each element in the input. Then, we will compare both dictionaries and measure a similarity percentage. 
+Furthermore, the accuracy of classifying a verb and a noun will be tested similarly. 
 
