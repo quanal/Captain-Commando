@@ -30,7 +30,7 @@ Tool : we will use natural language tool kit, sklearn, tensorflow.
 
 
 
-VI. Evaluation and conclusions:(30 points)
+Evaluation and conclusions:(30 points)
 Evaluation plan:
 Quantitative evaluation:
 This is a set of  capabilities that the Agent has to successfully perform.
