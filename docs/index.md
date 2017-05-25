@@ -9,7 +9,7 @@ Captain Commando is a Natural Language Processing project where an AI agent take
 
 <h3>Interactions</h3>
 
-<img src="https://farm5.staticflickr.com/4252/34746200421_e639b83c1a_m.jpg">
+<img src="http://farm5.staticflickr.com/4252/34746200421_e639b83c1a_b.jpg">
 
 
 
