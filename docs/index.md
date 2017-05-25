@@ -11,6 +11,13 @@ Captain Commando is a Natural Language Processing project where an AI agent take
 
 <img src="http://farm5.staticflickr.com/4252/34746200421_e639b83c1a_b.jpg">
 
+The agent is able to classify the item as a redstone_block and it also returns the list of moves for the shorest path.
+
+
+<img src="http://farm5.staticflickr.com/4252/34746200421_e639b83c1a_b.jpg">
+
+Capable of knowing when he is in danger of falling.
+
 
 
 This is another paragraph.
