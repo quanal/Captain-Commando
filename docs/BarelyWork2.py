@@ -41,6 +41,9 @@ corpus = [
 ("I feel amazing!", 'Statement'),
 ('Gary is a friend of mine.', 'Statement'),
 ("I can't believe I'm doing this.", 'Statement'),
+('Make a cool toy', 'Command'),
+('Make a left', 'Command'),
+('Make a right', 'Command'),
 ('WHat is love', 'Question'),
 ("Move forward to the next block", 'Command'),
 ('why are you sad?', 'Question'),
@@ -61,6 +64,7 @@ learner = NaiveBayesClassifier(corpus)
 
 #this is for items in the enviroment
 object_data = [
+('emerald', 'emerald_block'),
 ('green block', 'emerald_block'),
 ('green square', 'emerald_block'),
 ('green thing', 'emerald_block'),
@@ -70,6 +74,7 @@ object_data = [
 ('green block', 'emerald_block'),
 ('red block', 'redstone_block'),
 ('red square', 'redstone_block'),
+('red stone', 'redstone_block'),
 ('red thing', 'redstone_block'),
 ('red stuff', 'redstone_block'),
 ('dark red thing', 'redstone_block'), 
@@ -79,6 +84,7 @@ object_data = [
 ]
 object_learner = NaiveBayesClassifier(object_data)
 
+movementDict = {""}
 ##############################################################################
 ######################### ENVIROMENT #########################################
 ##############################################################################
@@ -205,9 +211,6 @@ def GetMissionXML(seed, gp, size=20):
                 </AgentQuitFromCollectingItem>
 
                     <DiscreteMovementCommands/>
-                    <AgentQuitFromTouchingBlockType>
-                        <Block type="redstone_block"/>
-                    </AgentQuitFromTouchingBlockType>
                     <ObservationFromGrid>
                       <Grid name="floorAll">
                         <min x="-40" y="-1" z="-40"/>
@@ -262,6 +265,7 @@ def find_start_end(grid,):
     counter = 0
     eb_index = None
     rb_index = None
+    print(grid)
     for i in grid:
 
         if i == 'emerald_block':
@@ -319,13 +323,14 @@ def findValidMove(grid):
 
 def remove_air(grid):
     d = dict()
-
+    legal_moves = []
     counter = 0 
     for i in grid:
         if i == 'diamond_block' or i == 'redstone_block'or i == 'emerald_block':
             d[i] = counter
+            legal_moves.append(counter)
         counter +=1
-    return d
+    return d, legal_moves
 
     
 def dijkstra_shortest_path(grid,source,end):
@@ -430,12 +435,12 @@ for i in range(num_repeats):
 #What we currently have is a classifier that determines whether the user_input
 #is a Command/Question/Statement. 
     grid = load_grid(world_state)
-    objects_pos = remove_air(grid)
+    objects_pos, legal_pos = remove_air(grid) #object pos 
     print(objects_pos)
 ###############################################################################
     user_input = None
     #####Initial source =====>
-    source,dest = find_start_end(grid)
+    source = 3280
     single_commands = ['jump','Jump',]
     while(user_input != "Quit"):
         #THIS IS NOT THE SAME ANYMORE
@@ -452,13 +457,66 @@ for i in range(num_repeats):
         print("TYPE OF SENTENCE: {}".format(result))
         print("_________________________________________________")
         
+###############################################################################
+############## SIMPLE ACTIONS LIKE JUMP/MOVE LEFT/MOVE RIGHT ##################
+###############################################################################
         
-        if user_input == "Jump" or user_input == "jump":
-            agent_host.sendCommand("jump 1")
-            world_state = agent_host.getWorldState()
-        
-            
+##        if user_input == "Jump" or user_input == "jump":
+##            agent_host.sendCommand("jump 1")
+##            world_state = agent_host.getWorldState()
+##        
+##        if obj == "right" or obj == "Right":
+##            temp_source = source - 1
+##            #CHECKS IF YOU DONT FALL
+##            if temp_source in legal_pos:
+##                agent_host.sendCommand("movewest 1")
+##                world_state = agent_host.getWorldState()
+##                source = source - 1
+##            else:
+##                print("If i make another right I will Fall to my death")
+##            
+##        if obj == "left" or obj == "Left":
+##            temp_source = source + 1
+##            #CHECKS IF YOU DONT FALL
+##            if temp_source in legal_pos:
+##                agent_host.sendCommand("moveeast 1")
+##                world_state = agent_host.getWorldState()
+##                source = source + 1
+##            else:
+##                print("If I make another left I will fall to my death")
+
+
+
+#####Quantity of something can be added by extracting the tag CD
+                
         if result == 'Command':
+            if user_input == "Jump" or user_input == "jump":
+                agent_host.sendCommand("jump 1")
+                world_state = agent_host.getWorldState()
+                
+
+            
+            if obj == "right" or obj == "Right":
+                temp_source = source - 1
+                #CHECKS IF YOU DONT FALL
+                if temp_source in legal_pos:
+                    agent_host.sendCommand("movewest 1")
+                    world_state = agent_host.getWorldState()
+                    source = source - 1
+                else:
+                    print("If i make another right I will Fall to my death")
+                
+            if obj == "left" or obj == "Left":
+                temp_source = source + 1
+                #CHECKS IF YOU DONT FALL
+                if temp_source in legal_pos:
+                    agent_host.sendCommand("moveeast 1")
+                    world_state = agent_host.getWorldState()
+                    source = source + 1
+                else:
+                    print("If I make another left I will fall to my death")
+
+            
             #THIS HAPPENS IF USER KNOWS THE EXACT NAME OF THE OBJECT
             if obj in objects_pos.keys():
                 print("GOOOOOOD")
@@ -500,8 +558,10 @@ for i in range(num_repeats):
                             action_index += 1
                             world_state = agent_host.getWorldState()
                         print(action_list)
-                    else:
-                        print("Object not in the enviroment")
+                else:
+                    pass
+                    #print("I cant find that item: Sorry!!")
+                ##id object not in the enviroment
         if result == 'Question':
             print("Good Question!! I dont know the answer to that. But give me a command")
         if result == 'Statement':
