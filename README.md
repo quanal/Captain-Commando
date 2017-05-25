@@ -1,4 +1,4 @@
-#World of Wordcraft
+# World of Wordcraft
 Group Project CS175
 Member: Quan Le
         Chuong Nghiem
