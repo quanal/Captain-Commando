@@ -2,8 +2,7 @@
 layout: default
 title:  Home
 ---
-
-_Add your text here_
+<img src="https://farm5.staticflickr.com/4269/34490216680_553887449d_m.jpg">
 
 
 What's Markdown (`.md`)?
