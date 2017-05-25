@@ -33,12 +33,8 @@ This module focuses on extracting the verb, adjective, and the noun from a sente
 
 
 
-
-
 <h3>Links to tools for Natural Language Processing</h3>
 
-Just getting started with Markdown?
-See the [HTML <-> Markdown Quick Reference (Cheat Sheet)][quickref].
 
 
-[quickref]: https://github.com/mundimark/quickrefs/blob/master/HTML.md
+
