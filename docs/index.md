@@ -5,11 +5,7 @@ title:  Home
 <img src="http://farm5.staticflickr.com/4200/34066171843_29d7346537_b.jpg">
 
 <h3>About</h3>
-
-Markdown is markup that lets you write hypertext (HTML) documents
-in easy-to-read and easy-to-write plain text.
-No angle brackets `<></>` required for
-paragraphs, lists, blockquotes, tables, etc.
+Captain Commando is a Natural Language Processing project where an AI agent takes a set of instructions as an input and turns it into actions. This form of interaction focuses in converting text into actual action for the game. To achieve this, the agent needs to learn a what a proper sentence structure really is. Once the agent understands these criteria, it is important for it to break down the sentence and be able to classify the verb, adjective and noun. This classification is important in order for out agent to distinguish the type of action it should take, such as jumping, walking, cutting and etc. Same concept applies for the noun, the agent needs to know the difference between a red cube and a green cube or maybe the difference between a tree and a pig. Furthermore, most of the actions will involve moving from place to place in the destination. To achieve this, the agent will determine the shortest path from its position to the object is trying to reach using Dijkstra’s algorithm.   
 
 
 This is a paragraph (in Markdown). Some more
