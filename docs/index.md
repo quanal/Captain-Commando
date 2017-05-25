@@ -4,8 +4,7 @@ title:  Home
 ---
 <img src="http://farm5.staticflickr.com/4200/34066171843_29d7346537_b.jpg">
 
-
-What's Markdown (`.md`)?
+<h6>About</h6>
 
 Markdown is markup that lets you write hypertext (HTML) documents
 in easy-to-read and easy-to-write plain text.
