@@ -7,9 +7,11 @@ title:  Home
 <h3>About</h3>
 Captain Commando is a Natural Language Processing project where an AI agent takes a set of instructions as an input and turns it into actions. This form of interaction focuses in converting text into actual action for the game. To achieve this, the agent needs to learn a what a proper sentence structure really is. Once the agent understands these criteria, it is important for it to break down the sentence and be able to classify the verb, adjective and noun. This classification is important in order for out agent to distinguish the type of action it should take, such as jumping, walking, cutting and etc. Same concept applies for the noun, the agent needs to know the difference between a red cube and a green cube or maybe the difference between a tree and a pig. Furthermore, most of the actions will involve moving from place to place in the destination. To achieve this, the agent will determine the shortest path from its position to the object is trying to reach using Dijkstra’s algorithm.   
 
+<h3>Interactions</h3>
 
-This is a paragraph (in Markdown). Some more
-text here.
+<img src="https://farm5.staticflickr.com/4252/34746200421_e639b83c1a_m.jpg">
+
+
 
 This is another paragraph.
 
