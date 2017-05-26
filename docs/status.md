@@ -1,4 +1,6 @@
 Project summery: Our project is using Natural Languale Processing to command the AI agent what to do. We use Deterministic Finite State machine to classify the command out of any other statement or questions that the user put to the AI agent. The goal of our project is the AI agent be able to execute the command from simple to complex such as: go to the tree, go and cut the tree, or find the house, go behind the nearest tree... 
 
 Approach: 
-  
+  Our algorithm is to classify the user input first and make sure it is a command. Next we will break the command into a list of work and classify which one is the action and the object. Furthermore, the command may or may not contain the transition word such as (to, the, until ...) or adjective that describe the object such as (corlor adjective: green, red, blue or position adjective: nearest, next to something, behind). At first, we use text classifier NaiveBayesClassifier from textblob.classifiers library to classify which input is command which is not. Then use nlkt.pos_tag() to classify which word in the input is action, or object base on the tag of the word. The problem of this method is the pos_tag() function sometime does not give us the good result. For example, if the input is 
+
+<img src="https://github.com/quanal/Captain-Commando/blob/master/docs/18718569_1307426995979417_1184667231_n.png">
