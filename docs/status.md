@@ -11,3 +11,13 @@ Anothe problem of this approach is even if we switch the order of our cammand it
 
 IMAGE OF OUR FINITE STATE MACHINE
 
+For example: if the user input is "go to the house", the command will be split into list of word and each word will be pass into the state machine to see if after run the whole list, it will be in the accpet state or reject state. The example above will go:
+(State 0 , "go") = State 1, 
+(State 1, "to") = State 3,
+(State 3, "the") = State 4,
+(State 4,"house") = State 6
+State 6 is in accpeting state so the input is accepted. After that we will use extraction function to take the action and object to pass to our AI agent. 
+Another example: "to the house go", the command will be split in to ["to","the","house","go"]:
+(State 0, "to" ) = state None, 
+Then it will reject the input and return 0 meaning the input above is not valid command.
+The disadvantage of this approach is our state machine is quiet simple to identify the more complex command such as "go to the red house", "go to the nearest red house", "go and find the red stone". They're all valid command but the state machine is not recognized any adjective go before the object just yet. We will have this in our final Project.
