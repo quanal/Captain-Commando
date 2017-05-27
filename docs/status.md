@@ -9,7 +9,7 @@ Anothe problem of this approach is even if we switch the order of our cammand it
   
   Therefore we decided to switch to another approach to classify command out of the user_input. We use DFA (Deterministic Finite State Machine) to take the input. The state machine will accept if the user input follow the certain structure. Below is the picture of our simple DFA to accept or reject the user_input. 
 
-<img src="http://farm5.staticflickr.com/4243/34767366632_9efc3504f8_b.jpg">
+<img src="http://farm5.staticflickr.com/4221/34799352621_6e541fdafe_b.jpg">
 
 For example: if the user input is "go to the house", the command will be split into list of word and each word will be pass into the state machine to see if after run the whole list, it will be in the accpet state or reject state. The example above will go:
 (State 0 , "go") = State 1, 
@@ -24,7 +24,7 @@ The disadvantage of this approach is our state machine is quiet simple to identi
 
 Next approach is to have the agent execute command base on action and object. We use the function to randomly put item into the field such as (coal, carrot...) then we achieve the position of that item (x,y,z) coordinate and then we use dijkstra's algorithm for shortest path to find the way for our AI agent to get to the item. The problem of this is the position of each item is in (x,y,z) coordinate and our dijkstra's algorithm take input as the index of the block of our agent and index of the block where the item is. Therefore we use the formular below to get to the index of the block.
 
-<img src="https://www.flickr.com/photos/149355623@N08/34931180795/in/dateposted-public/">
+<img src="http://farm5.staticflickr.com/4243/34767366632_9efc3504f8_b.jpg">
 
 The way the x,y,z and index of each block works is if you go north then your index will decrease by 21 and your z will decrease by 1. South: index increase 21 and z increase by 1. West: index and x will decrease by 1. Ease: both index and x will increase by 1. There for if we have the current position of agent (both index and x,y,z) and the current x,y,z of the item we can figure out the current index of the item by:
 horizontal = item_x - agent_x
