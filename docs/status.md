@@ -38,3 +38,15 @@ vertical = 21 * (item_z - agent_z)
 
 item_index = agent_index + vertical + horizontal
 
+
+
+<h3>Evaluation</h3>
+
+Our first classifier focuses in distinguishing a text input (sentence). During the implementation process we notice that sometimes when we would write any type of sentence into the command line it will be difficult for or agent to identify the what a command really is. For instance, what if the user writes a question or a statement instead of a command, how would our agent execute an action when given a question? Or How would our agent extract a verb or a noun from a sentence that doesn’t include a verb/noun at all? Our first observation was that in Natural language a command does include verb and nouns Knowing this we decided that the first step is to use Naive Bayes Classifier in order for our agent to be able to filter out sentences that are questions or statements, where statements are compliments, or insults etc.
+
+Problem with Naive Bayes Classifier is that it bases its prediction on the occurrence of words. For instance, if you observe the training data for our classifier, you can see that a lot of the data that start with what, where, why will be classify as a question because those words occur constantly in the in the training data. This causes an issue because it doesn't focus in the order of the sentence, so a sentence like "that What is?" will still be classified as a question. Now The solution to this is explained later in this report. The reason why we used Naive Bayes classifier was because we wanted to categories the general aspect of a sentence. In other words, we wanted to filter out sentences that weren't a command.
+
+Another issue that was presented was that our classifier was performing poorly We can see that the accuracy of our learner based on our data does poorly in distinguishing between a statement a question or a command. One way in which we fixed this was through feeding it more relevant data to our project. For instance, putting commands that will only work in Malmo such as "move to the tree" and avoid irrelevant commands such as "Make a backflip". By doing this we narrow down the amount of important data we feed to our classifier. If Malmo was more complex to the point where we can perform any sort of action like a backflip or make the agent laugh then it would be important to create a huge training data structure.
+
+As we improved our sentence_data and as we train our classifier to have more relevance to possible Malmo commands we notice that the accuracy of our Naive Bayes classifier increased. 
+
