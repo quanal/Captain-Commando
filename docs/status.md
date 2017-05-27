@@ -46,13 +46,26 @@ Our first classifier focuses in distinguishing a text input (sentence). During t
 
 <img src="http://farm5.staticflickr.com/4270/34891425106_0323cecf89_b.jpg">
 
-Problem with Naive Bayes Classifier is that it bases its prediction on the occurrence of words. For instance, if you observe the training data for our classifier, you can see that a lot of the data that start with what, where, why will be classify as a question because those words occur constantly in the in the training data. This causes an issue because it doesn't focus in the order of the sentence, so a sentence like "that What is?" will still be classified as a question. This presents a problem because that is not the proper sentence structure for the English language. Now The solution to this is explained later in this evaluation part of the report. The reason why we used Naive Bayes classifier was because we wanted to categories the general aspect of a sentence. In other words, we wanted to filter out sentences that weren't a command.
+
+Problem with Naive Bayes Classifier is that it bases its prediction on the occurrence of words. For instance, if you observe the training data for our classifier (Look at the figure below), you can see that a lot of the data that start with "what", "where", "why" will be classify as a question because those words occur constantly in the in the training data. This causes an issue because it doesn't focus in the order of the sentence, so a sentence like "that What is?" will still be classified as a question. This presents a problem because that is not the proper sentence structure for the English language. Now The solution to this is explained later in this evaluation part of the report. The reason why we used Naive Bayes classifier was because we wanted to categories the general aspect of a sentence. In other words, we wanted to filter out sentences that weren't a command.
+
+<h4>Training Data</h4>
+<img src="http://farm5.staticflickr.com/4228/34800541851_e7e6e4cba9_b.jpg">
+
+<h4>Test Data</h4>
+<img src="blob:https://www.flickr.com/1f928b44-1cb7-4a10-949c-1fe7034ef773">
+
+
+
 
 
 
 Another issue that was presented was that our classifier was performing poorly (look at the figure below). We can see that the accuracy of our learner based on our data does poorly in distinguishing between a statement a question or a command. One way in which we fixed this was through feeding it more relevant data to our project. For instance, putting commands that will only work in Malmo such as "move to the tree" and avoid irrelevant commands such as "Make a backflip". By doing this we narrow down the amount of important data we feed to our classifier. If Malmo was more complex to the point where we can perform any sort of action like a backflip or make the agent laugh then it would be important to create a huge training data structure.
 
-<img src="https://www.flickr.com/9ff2a6c1-3f28-42c2-8fdf-08a7eb255f3f">
+<img src="blob:https://www.flickr.com/9ff2a6c1-3f28-42c2-8fdf-08a7eb255f3f">
+
+<h4>Features</h4>
+<img src="http://farm5.staticflickr.com/4267/34891960246_9a7b450c5c_b.jpg">
 
 As we improved our sentence_data and as we train our classifier to have more relevance to possible Malmo commands we notice that the accuracy of our Naive Bayes classifier increased. (Look at the figure below).
 
