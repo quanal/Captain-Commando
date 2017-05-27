@@ -9,7 +9,7 @@ Anothe problem of this approach is even if we switch the order of our cammand it
   
   Therefore we decided to switch to another approach to classify command out of the user_input. We use DFA (Deterministic Finite State Machine) to take the input. The state machine will accept if the user input follow the certain structure. Below is the picture of our simple DFA to accept or reject the user_input. 
 
-<img src="https://www.flickr.com/photos/149355623@N08/34767224162/in/dateposted-public/">
+<img src="http://farm5.staticflickr.com/4243/34767366632_9efc3504f8_b.jpg">
 
 For example: if the user input is "go to the house", the command will be split into list of word and each word will be pass into the state machine to see if after run the whole list, it will be in the accpet state or reject state. The example above will go:
 (State 0 , "go") = State 1, 
