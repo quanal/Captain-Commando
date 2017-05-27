@@ -54,3 +54,6 @@ Another issue that was presented was that our classifier was performing poorly W
 
 As we improved our sentence_data and as we train our classifier to have more relevance to possible Malmo commands we notice that the accuracy of our Naive Bayes classifier increased. 
 
+<img src="http://farm5.staticflickr.com/4195/34891619076_aaa70f8c6b_b.jpg">
+<img src="http://farm5.staticflickr.com/4198/34891641866_b69ca92d0c_b.jpg">
+
