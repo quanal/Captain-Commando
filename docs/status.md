@@ -53,7 +53,7 @@ Problem with Naive Bayes Classifier is that it bases its prediction on the occur
 <img src="http://farm5.staticflickr.com/4228/34800541851_e7e6e4cba9_b.jpg">
 
 <h4>Test Data</h4>
-<img src="blob:https://www.flickr.com/1f928b44-1cb7-4a10-949c-1fe7034ef773">
+<img src="http://farm5.staticflickr.com/4223/34122301603_0b22425f0c_b.jpg">
 
 
 
@@ -62,7 +62,7 @@ Problem with Naive Bayes Classifier is that it bases its prediction on the occur
 
 Another issue that was presented was that our classifier was performing poorly (look at the figure below). We can see that the accuracy of our learner based on our data does poorly in distinguishing between a statement a question or a command. One way in which we fixed this was through feeding it more relevant data to our project. For instance, putting commands that will only work in Malmo such as "move to the tree" and avoid irrelevant commands such as "Make a backflip". By doing this we narrow down the amount of important data we feed to our classifier. If Malmo was more complex to the point where we can perform any sort of action like a backflip or make the agent laugh then it would be important to create a huge training data structure.
 
-<img src="blob:https://www.flickr.com/9ff2a6c1-3f28-42c2-8fdf-08a7eb255f3f">
+<img src="http://farm5.staticflickr.com/4244/34800409321_00b86d568c_b.jpg">
 
 <h4>Features</h4>
 <img src="http://farm5.staticflickr.com/4267/34891960246_9a7b450c5c_b.jpg">
