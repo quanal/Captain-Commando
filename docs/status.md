@@ -31,6 +31,7 @@ Next approach is to have the agent execute command base on action and object. We
 <img src="http://farm5.staticflickr.com/4243/34767366632_9efc3504f8_b.jpg">
 
 The way the x,y,z and index of each block works is if you go north then your index will decrease by 21 and your z will decrease by 1. South: index increase 21 and z increase by 1. West: index and x will decrease by 1. Ease: both index and x will increase by 1. There for if we have the current position of agent (both index and x,y,z) and the current x,y,z of the item we can figure out the current index of the item by:
+
 horizontal = item_x - agent_x
 
 vertical = 21 * (item_z - agent_z)
