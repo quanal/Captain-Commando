@@ -77,7 +77,7 @@ As we improved our sentence_data(Training data) and as we train our classifier t
 <ul>
     <li>The function of getting current AI agent is not consistence. Sometime it return the true position (xyz), but other time, the z values is different by +/-1. </li>
     
-    <img src = "https://drive.google.com/file/d/0B_o9W_bN10RoTURjRzU4WVJpaTA/view?usp=sharing>
+    <img src = "hhttp://farm5.staticflickr.com/4267/34567568080_a5d692c45c_b.jpg">
     
      <li> How to manipulate the environment so that there is various type of objects for us to test what our Agent can do. Right now, we only dropping objects such as (coal, carrot, egg, ..) onto the maze the field ant random positions. In future we want to have a house, or a tree to see if our Agent can recognize which one is the house or tree and perform certain action to the object.</li>
     <br>
