@@ -70,3 +70,6 @@ As we improved our sentence_data(Training data) and as we train our classifier t
 
 <h4>Challenge and Remaining Goal</h4>
 
+    The function of getting current AI agent is not consistence. Sometime it return the true position (xyz), but other time, the z values is different by +/-1.
+    
+
