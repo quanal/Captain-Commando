@@ -41,19 +41,24 @@ The way the x,y,z and index of each block works is if you go north then your ind
 <br>
 <h3><b>Evaluation</b></h3>
 
-Our first classifier focuses in distinguishing a text input (sentence). During the implementation process we notice that sometimes when we would write any type of sentence into the command line it will be difficult for or agent to identify the what a command really is. For instance, what if the user writes a question or a statement instead of a command, how would our agent execute an action when given a question? Or How would our agent extract a verb or a noun from a sentence that doesn’t include a verb/noun at all? Our first observation was that in Natural language a command does include verb and nouns Knowing this we decided that the first step is to use Naive Bayes Classifier in order for our agent to be able to filter out sentences that are questions or statements, where statements are compliments, or insults etc.
+Our first classifier focuses in distinguishing a text input (sentence). During the implementation process we notice that sometimes when we would write any type of sentence into the command line it will be difficult for or agent to identify the what a command really is. For instance, what if the user writes a question or a statement instead of a command, how would our agent execute an action when given a question? Or How would our agent extract a verb or a noun from a sentence that doesn’t include a verb/noun at all? Our first observation was that in Natural language a command does include verbs and nouns. Knowing this we decided that the first step is to use Naive Bayes Classifier in order for our agent to be able understand what a command is and how is it different from questions or statements, where statements could be compliments and facts or opinions.
 
 <img src="http://farm5.staticflickr.com/4270/34891425106_0323cecf89_b.jpg">
 
 
-Problem with Naive Bayes Classifier is that it bases its prediction on the occurrence of words. For instance, if you observe the training data for our classifier (Look at the figure below), you can see that a lot of the data that start with "what", "where", "why" will be classify as a question because those words occur constantly in the in the training data. This causes an issue because it doesn't focus in the order of the sentence, so a sentence like "that What is?" will still be classified as a question. This presents a problem because that is not the proper sentence structure for the English language. Now The solution to this is explained later in this evaluation part of the report. The reason why we used Naive Bayes classifier was because we wanted to categories the general aspect of a sentence. In other words, we wanted to filter out sentences that weren't a command.
+Problem with Naive Bayes Classifier is that it bases its prediction on the occurrence of words. For instance, if you observe the training data for our classifier (Look at the figure below), you can see that a lot of the data that start with "what", "where", "why" will be classify as a question because those words occur constantly in the in the training data and are defined as a question. This causes an issue because it doesn't focus in the order of the sentence, so a sentence like "that What is?" will still be classified as a question. This presents a problem because that is not the proper sentence structure for the English language. Now The solution to this is explained later in this evaluation part of the status report. The reason why we used Naive Bayes classifier was because we wanted to categories the general aspect of a sentence. In other words, we wanted our learner to differentiate a command from the other types of sentences
+
 <br><br>
 <h4>Training Data</h4>
 <img src="http://farm5.staticflickr.com/4228/34800541851_e7e6e4cba9_b.jpg">
+Our training Data was manually genereated and it categorizes three main things. These three things include question, command and statement. 
+
 <br><br>
 <h4>Test Data</h4>
 <img src="http://farm5.staticflickr.com/4223/34122301603_0b22425f0c_b.jpg">
+Like the Training data, we also manually generated the test data necessary to check the accuracy of our classifier/learner. We test the accuracy using the funcion below.
 
+<img src="http://farm5.staticflickr.com/4273/34567791550_eae946be76_b.jpg">
 
 Another issue that was presented was that our classifier was performing poorly (look at the figure below). We can see that the accuracy of our learner based on our data does poorly in distinguishing between a statement a question or a command. One way in which we fixed this was through feeding it more relevant data to our project. For instance, putting commands that will only work in Malmo such as "move to the tree" and avoid irrelevant commands such as "Make a backflip". By doing this we narrow down the amount of important data we feed to our classifier. Also, if you look at the Feature for our classifier we notice that a lot of these features are relevant to commands in Malmo. If Malmo was more complex to the point where we can perform any sort of action like a backflip or make the agent laugh then it would be important to create a huge training data structure.
 
@@ -67,15 +72,14 @@ As we improved our sentence_data(Training data) and as we train our classifier t
 <img src="http://farm5.staticflickr.com/4195/34891619076_aaa70f8c6b_b.jpg">
 <img src="http://farm5.staticflickr.com/4198/34891641866_b69ca92d0c_b.jpg">
 <br>
-
-<h4>Challenge and Remaining Goal</h4>
-    The function of getting current AI agent is not consistence. Sometime it return the true position (xyz), but other time, the z values is different by +/-1.
+<h4><b>Challenge and Remaining Goal</b></h4>
+<ul>
+    <li>The function of getting current AI agent is not consistence. Sometime it return the true position (xyz), but other time, the z values is different by +/-1. </li>
     
-<img src="http://farm5.staticflickr.com/4267/34567568080_a5d692c45c_b.jpg">
-
-  How to manipulate the environment so that there is various type of objects for us to test what our Agent can do. Right now, we only dropping objects such as (coal, carrot, egg, ..) onto the maze the field ant random positions. In future we want to have a house, or a tree to see if our Agent can recognize which one is the house or tree and perform certain action to the object.
-  
-  Our first remaining goal is to make our DFA more powerful to be able to recognize more complex command. As I mention above our DFA only can accept command in simple form (verb + to + the + noun). If we add any adjective to describe the object or and multiple action in to the command such as "go and find" or "find and cut" it will throw into reject state. Therefore, in future we want our DFA be able to accept complex command.
-
-  Secondly, our AI agent only limited to perform movement action such as go left, go right, go to one object. We want our agent can perform various type of actions for example: attack, find a certain object, cut the tree, etc ...
-  
+    <img src = "https://drive.google.com/file/d/0B_o9W_bN10RoTURjRzU4WVJpaTA/view?usp=sharing>
+    
+     <li> How to manipulate the environment so that there is various type of objects for us to test what our Agent can do. Right now, we only dropping objects such as (coal, carrot, egg, ..) onto the maze the field ant random positions. In future we want to have a house, or a tree to see if our Agent can recognize which one is the house or tree and perform certain action to the object.</li>
+    <br>
+     <li>Our first remaining goal is to make our DFA more powerful to be able to recognize more complex command. As I mentioned above, our DFA only allow command in simple structure (verb + go + to + noun). We want our DFA can recognize more complex command such as if the user input adjective to describe the object like position or color of that object</li>
+  <li>Secondly, our AI agent only limited to perform movement action such as go left, go right, go to one object. We want our agent can perform various type of actions for example: attack, find a certain object, cut the tree, etc ...</li>
+  </ul>
