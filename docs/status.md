@@ -55,10 +55,6 @@ Problem with Naive Bayes Classifier is that it bases its prediction on the occur
 <img src="http://farm5.staticflickr.com/4223/34122301603_0b22425f0c_b.jpg">
 
 
-
-
-
-
 Another issue that was presented was that our classifier was performing poorly (look at the figure below). We can see that the accuracy of our learner based on our data does poorly in distinguishing between a statement a question or a command. One way in which we fixed this was through feeding it more relevant data to our project. For instance, putting commands that will only work in Malmo such as "move to the tree" and avoid irrelevant commands such as "Make a backflip". By doing this we narrow down the amount of important data we feed to our classifier. Also, if you look at the Feature for our classifier we notice that a lot of these features are relevant to commands in Malmo. If Malmo was more complex to the point where we can perform any sort of action like a backflip or make the agent laugh then it would be important to create a huge training data structure.
 
 <img src="http://farm5.staticflickr.com/4244/34800409321_00b86d568c_b.jpg">
@@ -66,7 +62,7 @@ Another issue that was presented was that our classifier was performing poorly (
 <h4>Features</h4>
 <img src="http://farm5.staticflickr.com/4267/34891960246_9a7b450c5c_b.jpg">
 
-As we improved our sentence_data and as we train our classifier to have more relevance to possible Malmo commands we notice that the accuracy of our Naive Bayes classifier increased. (Look at the figure below).
+As we improved our sentence_data(Training data) and as we train our classifier to have more relevance to possible Malmo commands we notice that the accuracy of our Naive Bayes classifier increased. The reason for this is because when we run the classifier with the test data, it is accurate when distingishing a command from any other type of sentence.(Look at the figure below).
 
 <img src="http://farm5.staticflickr.com/4195/34891619076_aaa70f8c6b_b.jpg">
 <img src="http://farm5.staticflickr.com/4198/34891641866_b69ca92d0c_b.jpg">
