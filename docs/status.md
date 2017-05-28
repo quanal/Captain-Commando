@@ -13,13 +13,13 @@ Anothe problem of this approach is even if we switch the order of our cammand it
 <img src="http://farm5.staticflickr.com/4221/34799352621_6e541fdafe_b.jpg">
 
 For example: if the user input is "go to the house", the command will be split into list of word and each word will be pass into the state machine to see if after run the whole list, it will be in the accpet state or reject state. The example above will go:
-(State 0 , "go") = State 1, 
 
-(State 1, "to") = State 3,
-
-(State 3, "the") = State 4,
-
-(State 4,"house") = State 6
+<ul>
+<li>(State 0 , "go") = State 1, </li>
+<li>(State 1, "to") = State 3,</li>
+<li>(State 3, "the") = State 4,</li>
+<li>(State 4,"house") = State 6</li>
+</ul>
 
 State 6 is in accpeting state so the input is accepted. After that we will use extraction function to take the action and object to pass to our AI agent. 
 Another example: "to the house go", the command will be split in to ["to","the","house","go"]:
@@ -33,13 +33,11 @@ Next approach is to have the agent execute command base on action and object. We
 
 The way the x,y,z and index of each block works is if you go north then your index will decrease by 21 and your z will decrease by 1. South: index increase 21 and z increase by 1. West: index and x will decrease by 1. Ease: both index and x will increase by 1. There for if we have the current position of agent (both index and x,y,z) and the current x,y,z of the item we can figure out the current index of the item by:
 
-horizontal = item_x - agent_x
-
-vertical = 21 * (item_z - agent_z)
-
-item_index = agent_index + vertical + horizontal
-
-
+<ul>
+<li>horizontal = item_x - agent_x </li>
+<li>vertical = 21 * (item_z - agent_z)</li>
+<li>item_index = agent_index + vertical + horizontal</li>
+</ul>
 
 <h3>Evaluation</h3>
 
