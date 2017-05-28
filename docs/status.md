@@ -51,6 +51,7 @@ Problem with Naive Bayes Classifier is that it bases its prediction on the occur
 <br><br>
 <h4>Training Data</h4>
 <img src="http://farm5.staticflickr.com/4228/34800541851_e7e6e4cba9_b.jpg">
+
 Our training Data was manually genereated and it categorizes three main things. These three things include question, command and statement. 
 
 <br><br>
