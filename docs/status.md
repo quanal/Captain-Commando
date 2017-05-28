@@ -78,9 +78,9 @@ As we improved our sentence_data and as we train our classifier to have more rel
   
   Secondly, our AI agent only limited to perform movement action such as go left, go right, go to one object. We want our agent can perform various type of actions for example: attack, find a certain object, cut the tree, etc ...
   
-  Challenges we have right now are: 
-    The function of getting current AI agent is not consistence. Sometime it return the true position (xyz), but other time, the z values is different by +/-1. 
-    How to manipulate the environment so that there is various type of objects for us to test what our Agent can do. Right now, we only droping objects such as (coal, carrot, egg, ..) onto the maze the field ant random positions. In future we want to have a house, or a tree to see if our Agent can recognize which one is the house or tree and perform certain action to the object.
+   <div>Challenges we have right now are: 
+    <li>The function of getting current AI agent is not consistence. Sometime it return the true position (xyz), but other time, the z values is different by +/-1. </li>
+     <li> How to manipulate the environment so that there is various type of objects for us to test what our Agent can do. Right now, we only droping objects such as (coal, carrot, egg, ..) onto the maze the field ant random positions. In future we want to have a house, or a tree to see if our Agent can recognize which one is the house or tree and perform certain action to the object.</li></div>
     
     
   
