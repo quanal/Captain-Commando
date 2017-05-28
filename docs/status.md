@@ -1,6 +1,6 @@
 <h4><b>Project summery</b></h4> 
   Our project is using Natural Language Processing to command the AI agent what to do. We use Deterministic Finite State machine to classify the command out of any other statement or questions that the user put to the AI agent. The goal of our project is the AI agent will be able to execute the command from simple to complex such as: go to the tree, go and cut the tree, or find the house, go behind the nearest tree.
-<br><br>
+<br>
 <h4><b>Approach</b></h4> 
   Our algorithm is to classify the user input first and make sure it is a command. Next, we will break the command into a list of words and classify which one is the action and the object. Furthermore, the command may or may not contain the transition word such as (to, the, until ...) or adjective that describe the object such as (color adjective: green, red, blue or position adjective: nearest, next to something, behind). At first, we use text classifier NaiveBayesClassifier from textblob.classifiers library to classify which input is command which is not. Then use nlkt.pos_tag() to classify which word in the input is action, or object base on the tag of the word. Using that result, we can identify which one is a action word and which one is the target word, then we have extracion function to retrieve action and object base on the tag of each word. One problem of this approach is the pos_tag() function sometime does not give us the good result. For example, if the input is "move left" then the pos_tag() function will consider move is a noun and left is a verb. 
 
@@ -38,7 +38,7 @@ The way the x,y,z and index of each block works is if you go north then your ind
 <li>vertical = 21 * (item_z - agent_z)</li>
 <li>item_index = agent_index + vertical + horizontal</li>
 </ul>
-<br><br>
+<br>
 <h3><b>Evaluation</b></h3>
 
 Our first classifier focuses in distinguishing a text input (sentence). During the implementation process we notice that sometimes when we would write any type of sentence into the command line it will be difficult for or agent to identify the what a command really is. For instance, what if the user writes a question or a statement instead of a command, how would our agent execute an action when given a question? Or How would our agent extract a verb or a noun from a sentence that doesn’t include a verb/noun at all? Our first observation was that in Natural language a command does include verb and nouns Knowing this we decided that the first step is to use Naive Bayes Classifier in order for our agent to be able to filter out sentences that are questions or statements, where statements are compliments, or insults etc.
@@ -62,7 +62,7 @@ Problem with Naive Bayes Classifier is that it bases its prediction on the occur
 Another issue that was presented was that our classifier was performing poorly (look at the figure below). We can see that the accuracy of our learner based on our data does poorly in distinguishing between a statement a question or a command. One way in which we fixed this was through feeding it more relevant data to our project. For instance, putting commands that will only work in Malmo such as "move to the tree" and avoid irrelevant commands such as "Make a backflip". By doing this we narrow down the amount of important data we feed to our classifier. Also, if you look at the Feature for our classifier we notice that a lot of these features are relevant to commands in Malmo. If Malmo was more complex to the point where we can perform any sort of action like a backflip or make the agent laugh then it would be important to create a huge training data structure.
 
 <img src="http://farm5.staticflickr.com/4244/34800409321_00b86d568c_b.jpg">
-<br><br>
+<br>
 <h4>Features</h4>
 <img src="http://farm5.staticflickr.com/4267/34891960246_9a7b450c5c_b.jpg">
 
@@ -70,12 +70,14 @@ As we improved our sentence_data and as we train our classifier to have more rel
 
 <img src="http://farm5.staticflickr.com/4195/34891619076_aaa70f8c6b_b.jpg">
 <img src="http://farm5.staticflickr.com/4198/34891641866_b69ca92d0c_b.jpg">
-<br><br>
+<br>
 <h4><b>Challenge and Remaining Goal</b></h4>
-  Our first remaining goal is to make our DFA more powerful to be able to recognize more complex command. As I mentioned above, our DFA only allow command in simple structure (verb + go + to + noun). We want our DFA can recognize more complex command such as if the user input adjective to describe the object like position or color of that object. 
-  
-  Secondly, our AI agent only limited to perform movement action such as go left, go right, go to one object. We want our agent can perform various type of actions for example: attack, find a certain object, cut the tree, etc ...
-  <br><br>
-   <ul>Challenges we have right now are: 
+   <ul>Challenges: 
     <li>The function of getting current AI agent is not consistence. Sometime it return the true position (xyz), but other time, the z values is different by +/-1. </li>
      <li> How to manipulate the environment so that there is various type of objects for us to test what our Agent can do. Right now, we only dropping objects such as (coal, carrot, egg, ..) onto the maze the field ant random positions. In future we want to have a house, or a tree to see if our Agent can recognize which one is the house or tree and perform certain action to the object.</li></ul>
+     
+     <ul> Remanined goals</ul>
+       Our first remaining goal is to make our DFA more powerful to be able to recognize more complex command. As I mentioned above, our DFA only allow command in simple structure (verb + go + to + noun). We want our DFA can recognize more complex command such as if the user input adjective to describe the object like position or color of that object. 
+  
+  Secondly, our AI agent only limited to perform movement action such as go left, go right, go to one object. We want our agent can perform various type of actions for example: attack, find a certain object, cut the tree, etc ...
+  <br>
