@@ -75,5 +75,7 @@ As we improved our sentence_data and as we train our classifier to have more rel
 
 <h4>Challenge and Remaining Goal</h4>
   Our first remaining goal is to make our DFA more powerful to be able to recognize more complex command. As I mentioned above, our DFA only allow command in simple struture (verb + go + to + noun). We want our DFA can recognize more complex command such as if the user input adjective to describe the object like position or color of that object. 
-  Secondly, our AI agent only limited to perform movement action such as go left, go right, go to one object. We want our adject can perform various type of action for example: attack, find a certain object, cut the tree ... 
+  
+  Secondly, our AI agent only limited to perform movement action such as go left, go right, go to one object. We want our adject can perform various type of action for example: attack, find a certain object, cut the tree ...
+  
   Challenge we have right now is the function of getting current AI agent is not consistence. Sometime it return the true position but other time the values is different by 1. Another challenge we're facing is how to manipulate the environment so that there is various type of object for us to test what our Agent can do. Right now, we only droping object such as (coal, carrot, egg) into the field ant random position. In future we want to have a house, or a tree to see if our Agent can recognize which one is the house or tree and perform certain action to the object.
