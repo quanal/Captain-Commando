@@ -8,7 +8,7 @@
 
 Another problem of this approach is even if we switched the order of our cammand, it still executes it even though the sentence seems non-sense. For example, command is "go to the red block" then the agent will take <i>go</i> as an action and <i>red block</i> as an object, but if we switch the order of this command such as <i>go block red to the</i>, the agent still execute the command. Because our extraction function only takes action and obj based on the tag and ignore the order of the command, it will always gives the agent action and object.
   
-  Therefore we decided to switch to another approach to classify command out of the user_input. We use DFA (Deterministic Finite State Machine) to take the input. The state machine will accept if the user's input follows certain structures. Below is the picture of our simple DFA as to accept or reject the user_input. 
+  Therefore, we decided to switch to another approach to classify command out of the user_input. We use DFA (Deterministic Finite State Machine) to take the input. The state machine will accept if the user's input follows certain structures. Below is the picture of our simple DFA as to accept or reject the user_input. 
 
 <img src="http://farm5.staticflickr.com/4221/34799352621_6e541fdafe_b.jpg">
 
@@ -27,7 +27,7 @@ Another example: "to the house go", the command will be split in to ["to","the",
 Then it will reject the input and return 0 meaning the input above is not valid command.
 The disadvantage of this approach is our state machine is quiet simple to identify the more complex command such as "go to the red house", "go to the nearest red house", "go and find the red stone". They're all valid command but the state machine is not recognized any adjective go before the object just yet. We will have this in our final Project.
 
-Next approach is to have the agent execute command base on action and object. We use the function to randomly put item into the field such as (coal, carrot...) then we achieve the position of that item (x,y,z) coordinate and then we use Dijkstra’s algorithm for shortest path to find the way for our AI agent to get to the item. The problem of this is the position of each item is in (x,y,z) coordinate and our Dijkstra’s algorithm take input as the index of the block of our agent and index of the block where the item is. Therefore we use the formula below to get to the index of the block.
+Next approach is to have the agent execute command based on action and object.  We also use the similar ideas as shown in the homework 1, which is using layout of the two-dimensional grid laid out as a one dimentional array,  How ever, the location of the maze, will stays the same in the project. We currently used the random function to locate item onto the maze such as (coal, carrot...) then we achieve the position of that item (x,y,z) coordinate and then we use Dijkstra’s algorithm for shortest path to find the way for our AI agent to get to the item. The problem of this is the position of each item is in (x,y,z) coordinate and our Dijkstra’s algorithm take input as the index of the block of our agent and index of the block where the item is. This is because the grid is represented as a single-dimentional array, this means that we can only get the neighboring block based on the current one's index.  Therefore we use the formula below to get to the index of the blocks:
 
 <img src="http://farm5.staticflickr.com/4243/34767366632_9efc3504f8_b.jpg">
 
@@ -72,11 +72,10 @@ As we improved our sentence_data and as we train our classifier to have more rel
 <img src="http://farm5.staticflickr.com/4198/34891641866_b69ca92d0c_b.jpg">
 <br>
 <h4><b>Challenge and Remaining Goal</b></h4>
-<ul><h5>Challenges</h5>
+<ul>
     <li>The function of getting current AI agent is not consistence. Sometime it return the true position (xyz), but other time, the z values is different by +/-1. </li>
-     <li> How to manipulate the environment so that there is various type of objects for us to test what our Agent can do. Right now, we only dropping objects such as (coal, carrot, egg, ..) onto the maze the field ant random positions. In future we want to have a house, or a tree to see if our Agent can recognize which one is the house or tree and perform certain action to the object.</li></ul>
-     <br>
-     <ul><h5>Remanined goals</h5>
+     <li> How to manipulate the environment so that there is various type of objects for us to test what our Agent can do. Right now, we only dropping objects such as (coal, carrot, egg, ..) onto the maze the field ant random positions. In future we want to have a house, or a tree to see if our Agent can recognize which one is the house or tree and perform certain action to the object.</li>
+    <br>
      <li>Our first remaining goal is to make our DFA more powerful to be able to recognize more complex command. As I mentioned above, our DFA only allow command in simple structure (verb + go + to + noun). We want our DFA can recognize more complex command such as if the user input adjective to describe the object like position or color of that object</li>
   <li>Secondly, our AI agent only limited to perform movement action such as go left, go right, go to one object. We want our agent can perform various type of actions for example: attack, find a certain object, cut the tree, etc ...</li>
   </ul>
