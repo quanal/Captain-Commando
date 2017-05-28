@@ -75,7 +75,7 @@ As we improved our sentence_data(Training data) and as we train our classifier t
 
   How to manipulate the environment so that there is various type of objects for us to test what our Agent can do. Right now, we only dropping objects such as (coal, carrot, egg, ..) onto the maze the field ant random positions. In future we want to have a house, or a tree to see if our Agent can recognize which one is the house or tree and perform certain action to the object.
   
-  Our first remaining goal
+  Our first remaining goal is to make our DFA more powerful to be able to recognize more complex command. As I mention above our DFA only can accept command in simple form (verb + to + the + noun). If we add any adjective to describe the object or and multiple action in to the command such as "go and find" or "find and cut" it will throw into reject state. Therefore, in future we want our DFA be able to accept complex command.
 
   Secondly, our AI agent only limited to perform movement action such as go left, go right, go to one object. We want our agent can perform various type of actions for example: attack, find a certain object, cut the tree, etc ...
   
