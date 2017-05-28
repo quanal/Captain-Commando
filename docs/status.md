@@ -68,7 +68,7 @@ As we improved our sentence_data(Training data) and as we train our classifier t
 <img src="http://farm5.staticflickr.com/4198/34891641866_b69ca92d0c_b.jpg">
 <br>
 
-<h4><b>Challenge and Remaining Goal</b></h4>
+<h4>Challenge and Remaining Goal</h4>
 
     The function of getting current AI agent is not consistence. Sometime it return the true position (xyz), but other time, the z values is different by +/-1.
     
