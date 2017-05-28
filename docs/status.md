@@ -70,12 +70,3 @@ As we improved our sentence_data(Training data) and as we train our classifier t
 
 <h4>Challenge and Remaining Goal</h4>
 
-    The function of getting current AI agent is not consistence. Sometime it return the true position (xyz), but other time, the z values is different by +/-1.
-    
-    <img src = "http://farm5.staticflickr.com/4267/34567568080_a5d692c45c_b.jpg">
-    
-     How to manipulate the environment so that there is various type of objects for us to test what our Agent can do. Right now, we only dropping objects such as (coal, carrot, egg, ..) onto the maze the field ant random positions. In future we want to have a house, or a tree to see if our Agent can recognize which one is the house or tree and perform certain action to the object.</li>
-  
-     Our first remaining goal is to make our DFA more powerful to be able to recognize more complex command. As I mentioned above, our DFA only allow command in simple structure (verb + go + to + noun). We want our DFA can recognize more complex command such as if the user input adjective to describe the object like position or color of that object
-  Secondly, our AI agent only limited to perform movement action such as go left, go right, go to one object. We want our agent can perform various type of actions for example: attack, find a certain object, cut the tree, etc ...
-
