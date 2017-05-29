@@ -95,9 +95,13 @@ The finite machine is a Deterministic Finite machine and the definition of our D
 (Q, Σ, δ, q0, F)
 
 Q = {0,1,2,3,4,5,6,7}
+
 Σ = {please,verb,to,the,forward,backward,noun,the,left,right}
+
 δ = Q × Σ → Q
+
 q0 = {0}
+
 F = {5,6,7} 
 
 
