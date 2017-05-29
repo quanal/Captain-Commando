@@ -90,17 +90,27 @@ In order to be able to accept sentences with correct structure, yet be able to a
 
 
 There are still improvements needed in order for our finite machine to be more efficient. For instance, being able to accept command sentences that have “CD” tags. For instance, “Walk three tiles to the right”. The “CD” for this sentence would be “three”. Lets take a look at how our finite machine works. 
-The finite machine is a Deterministic Finite machine, and it only has three accepting states {5,6,7}. Transition function is {please,verb,to,the,forward,backward,noun,the,left,right}. 
+The finite machine is a Deterministic Finite machine and the definition of our DFA is described below. 
+
+(Q, Σ, δ, q0, F)
+
+Q = {0,1,2,3,4,5,6,7}
+Σ = {please,verb,to,the,forward,backward,noun,the,left,right}
+δ = Q × Σ → Q
+q0 = {0}
+F = {5,6,7} 
+
 
 <img src="http://farm5.staticflickr.com/4251/34570065290_57a0577cbc_b.jpg">
+This is the implemented transition function. 
 
 <img src="http://farm5.staticflickr.com/4267/34570066340_9ff2f84257_b.jpg">
+It return a 5, 6, or 7 if the command structure is approved.
 
 <img src="http://farm5.staticflickr.com/4251/34570065290_57a0577cbc_b.jpg">
-
-
-
 It returns a “0” if the deterministic finite machine doesn’t accept the structure.
+
+
 
 <br>
 <h4><b>Challenge and Remaining Goal</b></h4>
