@@ -7,6 +7,7 @@ import sys
 import time
 import json
 import random
+import CommandGrammar
 
 sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 0)  
 
@@ -92,8 +93,7 @@ movementDict = {""}
 mazeSize = 10 
 agentLocationList= [(0,0)]
 list_of_items= [ "coal", "planks", "rabbit", "carrot", "potato"]
-itemsLocationsList = [(9,18), (11,17), (9,18), (10,18), (15,10)]
-#itemsLocationsList = [(5,8), (11,14), (12,5), (11,8), (15,10)]
+itemsLocationsList = [(10,8), (11,14), (12,5), (11,8), (15,10)]
 itemInfo = {}
 
 
@@ -114,18 +114,18 @@ def itemInformation(list_of_items, itemsLocationsList):
 def getItemDrawing(itemInfoDict):
     drawing= ''
     for itemName, item_coordinate in itemInfoDict.items():
-        drawing += '<DrawItem x="' + str(item_coordinate[0]) + '" y="57" z="' + str(item_coordinate[1]) + '" type="' + itemName  + '" />'
+        drawing += '<DrawItem x="' + str(item_coordinate[0]) + '" y="0" z="' + str(item_coordinate[1]) + '" type="' + itemName  + '" />'
     return drawing
 
 
 def getSubgoalPositions(itemInfoDict):
     goals=""
     for itemName, item_coordinate in itemInfoDict.items():
-        goals += '<Point x="' + str(item_coordinate[0]) + '" y="57" z="' + str(item_coordinate[1]) + '" tolerance="1" description="ingredient" />'
+        goals += '<Point x="' + str(item_coordinate[0]) + '" y="0" z="' + str(item_coordinate[1]) + '" tolerance="1" description="ingredient" />'
     return goals
     
 
-def GetMissionXML(seed, gp, size=40):
+def GetMissionXML(seed, gp, size=20):
     global list_of_items
     global itemsLocationsList
     itemInfoString = itemInformation(list_of_items, itemsLocationsList)
@@ -141,7 +141,7 @@ def GetMissionXML(seed, gp, size=40):
             <ServerSection>
               <ServerInitialConditions>
                 <Time>
-                    <StartTime>23999</StartTime>
+                    <StartTime>1000</StartTime>
                     <AllowPassageOfTime>false</AllowPassageOfTime>
                 </Time>
                 <Weather>clear</Weather>
@@ -181,7 +181,7 @@ def GetMissionXML(seed, gp, size=40):
                 <Name>CS175AwesomeMazeBot</Name>
 
                 <AgentStart>
-                     <Placement x="0" y="57" z="0"/>
+                     <Placement x="20" y="0" z="0"/>
                     <Inventory></Inventory>
                 </AgentStart>
 
@@ -205,12 +205,6 @@ def GetMissionXML(seed, gp, size=40):
                 <InventoryCommands/>
                 <ObservationFromSubgoalPositionList>''' + getSubgoalPositions(itemInfoString) + '''
                 </ObservationFromSubgoalPositionList>
-
-                              <ObservationFromNearbyEntities>
-                    <Range name="entities" xrange="40" yrange="40" zrange="40"/>
-                </ObservationFromNearbyEntities>
-
-
                 <ObservationFromFullInventory/>
 
       <AgentQuitFromCollectingItem>
@@ -340,8 +334,6 @@ def remove_air(grid):
     
 def dijkstra_shortest_path(grid,source,end):
     possPath = findValidMove(grid)
-    #print(possPath)
-    print(source,end)
     parent = {source:None}
     currDisDict = {source:0}
     for i in range(len(possPath)):
@@ -352,7 +344,6 @@ def dijkstra_shortest_path(grid,source,end):
     pQ = {source:0}
     count = 0
     while len(pQ) != 0:
-        #print(count)
         currPoss = findMin(pQ)
         del pQ[currPoss]
         possList = []
@@ -369,7 +360,6 @@ def dijkstra_shortest_path(grid,source,end):
     myShortestPath = []
     result = []
     dest = end
-    #print(parent)
     while dest != source:
         myShortestPath.append(dest)
         dest = parent[dest]
@@ -380,32 +370,12 @@ def dijkstra_shortest_path(grid,source,end):
     
     return result, source     
 
-##################################
-# FIND THE AGENT LOCATION
-##################################
-def get_obj_locations(agent_host):
-    print("inside get_obj_location")
-    nearyby_obs = {}
-    while True:
-        world_state = agent_host.getWorldState()
-        if world_state.number_of_observations_since_last_state > 0:
-            msg = world_state.observations[-1].text
-            ob = json.loads(msg)
-            for ent in  ob['entities']:
-                print ent
-                name = ent['name']
-                # if name != 'Chester':
-                nearyby_obs[name] = (ent['x'], ent['yaw']+57, ent['z'])
-
-            return nearyby_obs
-
 ###############################################################################
 ################ STARTS THE AGENT AND RUNS THE MISSION ########################
 ###############################################################################
 
 # Create default Malmo objects:
 agent_host = MalmoPython.AgentHost()
-
 try:
     agent_host.parse( sys.argv )
 except RuntimeError as e:
@@ -421,13 +391,10 @@ if agent_host.receivedArgument("test"):
 else:
     num_repeats = 2 #REMMBER THIS IS THE LEVELS
 
-
-
-
 for i in range(num_repeats):
-    size = int(20 + .5*i)
+    size = int(20 + 0.5*i)
     print "Size of maze:", size
-    my_mission = MalmoPython.MissionSpec(GetMissionXML("20", .2 +float(i/20.0), size), True)
+    my_mission = MalmoPython.MissionSpec(GetMissionXML("10", 0.2 + float(i/20.0), size), True)
     my_mission_record = MalmoPython.MissionRecordSpec()
     my_mission.requestVideo(800, 500)
     my_mission.setViewpoint(1)
@@ -455,6 +422,7 @@ for i in range(num_repeats):
             print "Error:",error.text
 
 
+
 ##########################Getting the environment##################
     
 #This is where we will implement our mission. The General idea is to make our
@@ -463,57 +431,75 @@ for i in range(num_repeats):
 #is a Command/Question/Statement. 
     grid = load_grid(world_state)
     objects_pos, legal_pos = remove_air(grid) #object pos 
-    print('object position: {}'.format(objects_pos))
-    print('legal_pos position: {}'.format(legal_pos))
+    print(objects_pos)
 ###############################################################################
     user_input = None
     #####Initial source =====>
     source = 3280
     single_commands = ['jump','Jump',]
-
-    runCount =0
-
-
+    verb_set = CommandGrammar.get_all_the_verb("verb.txt")
+    states = {0,1,2,3,4,5,6,7}
+    tf = CommandGrammar.create_transition_function()
+    dfa = CommandGrammar.DFA(states,tf,0,{5,6,7})
     while(user_input != "Quit"):
-        runCount +=1
-        print('runCount = {}'.format(runCount))
-        agentLocation = get_obj_locations(agent_host)
-
-
-        for k, v in agentLocation.items():
-            print 'start round {}: ({}, {}, {})'.format(runCount, v[0], v[1], v[2])
-       
-
         #THIS IS NOT THE SAME ANYMORE
         user_input = raw_input("Please enter a command: ")
-        list_of_tags = classify.tagger(user_input)
-        action = classify.get_action(list_of_tags)
-        print("_________________________________________________")
-        print("ACTION: {}".format(action))
-        obj = classify.get_object(list_of_tags)
-        print("OBJECT: {}".format(obj))
-        adj = classify.get_adjective(list_of_tags)
-        print("Discription: {}".format(adj))
-        result = learner.classify(user_input)
-        print("TYPE OF SENTENCE: {}".format(result))
-        print("_________________________________________________")
+        accept_state = dfa.run_with_input_list(user_input.split(),verb_set)
+        
+##        list_of_tags = classify.tagger(user_input)
+##        action = classify.get_action(list_of_tags)
+##        print("_________________________________________________")
+##        print("ACTION: {}".format(action))
+##        obj = classify.get_object(list_of_tags)
+##        print("OBJECT: {}".format(obj))
+##        adj = classify.get_adjective(list_of_tags)
+##        print("Discription: {}".format(adj))
+##        result = learner.classify(user_input)
+##        print("TYPE OF SENTENCE: {}".format(result))
+##        print("_________________________________________________")
         
 ###############################################################################
 ############## SIMPLE ACTIONS LIKE JUMP/MOVE LEFT/MOVE RIGHT ##################
 ###############################################################################
-    
+        
+##        if user_input == "Jump" or user_input == "jump":
+##            agent_host.sendCommand("jump 1")
+##            world_state = agent_host.getWorldState()
+##        
+##        if obj == "right" or obj == "Right":
+##            temp_source = source - 1
+##            #CHECKS IF YOU DONT FALL
+##            if temp_source in legal_pos:
+##                agent_host.sendCommand("movewest 1")
+##                world_state = agent_host.getWorldState()
+##                source = source - 1
+##            else:
+##                print("If i make another right I will Fall to my death")
+##            
+##        if obj == "left" or obj == "Left":
+##            temp_source = source + 1
+##            #CHECKS IF YOU DONT FALL
+##            if temp_source in legal_pos:
+##                agent_host.sendCommand("moveeast 1")
+##                world_state = agent_host.getWorldState()
+##                source = source + 1
+##            else:
+##                print("If I make another left I will fall to my death")
+
 
 
 #####Quantity of something can be added by extracting the tag CD
-                
-        if result == 'Command':
-            if user_input == "Jump" or user_input == "jump":
-                agent_host.sendCommand("jump 1")
-                world_state = agent_host.getWorldState()
-                
-
+        if accept_state != 0:
+            action_input = CommandGrammar.extract_command_input(user_input,accept_state)
+            action = action_input[0]
+            obj = action_input[1].lower()
+            adj = "green"
             
-            if obj == "right" or obj == "Right":
+##        if result == 'Command':
+##            if user_input == "Jump" or user_input == "jump":
+##                agent_host.sendCommand("jump 1")
+##                world_state = agent_host.getWorldState()
+            if obj == "right":
                 temp_source = source - 1
                 #CHECKS IF YOU DONT FALL
                 if temp_source in legal_pos:
@@ -523,7 +509,7 @@ for i in range(num_repeats):
                 else:
                     print("If i make another right I will Fall to my death")
                 
-            if obj == "left" or obj == "Left":
+            if obj == "left":
                 temp_source = source + 1
                 #CHECKS IF YOU DONT FALL
                 if temp_source in legal_pos:
@@ -551,9 +537,6 @@ for i in range(num_repeats):
                     action_index += 1
                     world_state = agent_host.getWorldState()
                 print(action_list)
-                agentLocation = get_obj_locations(agent_host)
-                print("After finish dijtra's")
-                print(agentLocation)
             #Formal descriptions    
             else:
                 if adj != None:
@@ -578,16 +561,18 @@ for i in range(num_repeats):
                             action_index += 1
                             world_state = agent_host.getWorldState()
                         print(action_list)
-##                        agentLocation = get_obj_locations(agent_host)
-##                        print(agentLocation)
                 else:
                     pass
                     #print("I cant find that item: Sorry!!")
                 ##id object not in the enviroment
-        if result == 'Question':
-            print("Good Question!! I dont know the answer to that. But give me a command")
-        if result == 'Statement':
-            print("Good Statement!! But give me a command")
+        else:
+            print "not a valid command"
+            
+##        if result == 'Question':
+##            print("Good Question!! I dont know the answer to that. But give me a command")
+##        if result == 'Statement':
+##            print("Good Statement!! But give me a command")
+            
 
 
     while world_state.is_mission_running:
