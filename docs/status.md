@@ -72,6 +72,36 @@ As we improved our sentence_data(Training data) and as we train our classifier t
 
 <img src="http://farm5.staticflickr.com/4195/34891619076_aaa70f8c6b_b.jpg">
 <img src="http://farm5.staticflickr.com/4198/34891641866_b69ca92d0c_b.jpg">
+
+
+As we mentioned before, getting our agent to correctly classify a sentence was our first issue. Then, our next step was to get our agent to only accept proper structured English sentences. This implementation is necessary for our agent to avoid incorrect sentence structure like, “Go the please to tree” which the correct way to write this is, “Please go to the tree”. 
+
+The first step to this implementation was to first extract the Part of Speech tagger for each word in the sentence. To do this we used the tagger function from nltk tools that takes in a string as an argument and returns a list of tuples with the word being the first element in the tuple and the tag being the second element in the tuple. Also, for our implementation purposes we focused on extracting the action/verb and the object/noun in order to be able to execute the command. This will be explained in more details later in the evaluation part of the status report. 
+
+<img src="http://farm5.staticflickr.com/4203/34570060170_96d84cdde6_b.jpg">
+
+The reason why we use POS to extract the tags of each word was because we wanted to study the patterns of the correct structure of an English sentence more specifically for a command. Most of the commands we write for Malmo start with a verb, for example, “Go to the red block”, “Destroy the tree”, “Craft a bowl”, etc. Then, we notice that usually there are a few other tags in between the “VB”(Verb) and the “NN”(Noun). Sometimes commands have different structure like the one below. 
+
+<img src="http://farm5.staticflickr.com/4268/34957288315_9849933e90_b.jpg">
+
+In order to be able to accept sentences with correct structure, yet be able to accept different patterns for the tags that are consider to be command sentences. We decided to implement a Finite machine that would allow only those specific patterns to be accepted. Look at the figure below.
+
+<img src="http://farm5.staticflickr.com/4222/34957289055_dc39228d8d_b.jpg">
+
+
+There are still improvements needed in order for our finite machine to be more efficient. For instance, being able to accept command sentences that have “CD” tags. For instance, “Walk three tiles to the right”. The “CD” for this sentence would be “three”. Lets take a look at how our finite machine works. 
+The finite machine is a Deterministic Finite machine, and it only has three accepting states {5,6,7}. Transition function is {please,verb,to,the,forward,backward,noun,the,left,right}. 
+
+<img src="http://farm5.staticflickr.com/4251/34570065290_57a0577cbc_b.jpg">
+
+<img src="http://farm5.staticflickr.com/4267/34570066340_9ff2f84257_b.jpg">
+
+<img src="http://farm5.staticflickr.com/4251/34570065290_57a0577cbc_b.jpg">
+
+
+
+It returns a “0” if the deterministic finite machine doesn’t accept the structure.
+
 <br>
 <h4><b>Challenge and Remaining Goal</b></h4>
 <ul>
