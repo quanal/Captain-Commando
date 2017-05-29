@@ -135,16 +135,16 @@ Input = Please go to the park.
 <img src="http://farm5.staticflickr.com/4226/34571265890_c80281eda1_b.jpg">
 
 
-Step 2: Then, we check if the word ‘go’ is in verb.txt.
+<h4>Step 2: Then, we check if the word ‘go’ is in verb.txt.</h4>
 
 
-Step 3:  The DFA takes in the user input and splits it, then it runs the input in the finite machine.
+<h4>Step 3:  The DFA takes in the user input and splits it, then it runs the input in the finite machine.</h4>
 
 
 <img src="http://farm5.staticflickr.com/4270/34918158676_887966828a_b.jpg">
 
 
-Step 4: returns 6
+<h4>Step 4: returns 6</h4>
 
 
 <img src="http://farm5.staticflickr.com/4196/34148291393_dfb31f35be_b.jpg">
