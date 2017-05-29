@@ -130,8 +130,7 @@ The DFA machine takes a string and a list of verbs that is taken from a file tha
 
 Input = Please go to the park.
 
-Step 1: The sentence is split and the POS Tags are added to each word.
-
+<h4>Step 1: The sentence is split and the POS Tags are added to each word.</h4>
 
 <img src="http://farm5.staticflickr.com/4226/34571265890_c80281eda1_b.jpg">
 
