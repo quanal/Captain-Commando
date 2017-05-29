@@ -61,19 +61,20 @@ Like the Training data, we also manually generated the test data necessary to ch
 
 <img src="http://farm5.staticflickr.com/4273/34567791550_eae946be76_b.jpg">
 
-Another issue that was presented was that our classifier was performing poorly (look at the figure below). We can see that the accuracy of our learner based on our data does poorly in distinguishing between a statement a question or a command. One way in which we fixed this was through feeding it more relevant data to our project. For instance, putting commands that will only work in Malmo such as "move to the tree" and avoid irrelevant commands such as "Make a backflip". By doing this we narrow down the amount of important data we feed to our classifier. Also, if you look at the Feature for our classifier we notice that a lot of these features are relevant to commands in Malmo. If Malmo was more complex to the point where we can perform any sort of action like a backflip or make the agent laugh then it would be important to create a huge training data structure.
+Another issue that was presented was that our classifier was performing poorly (look at the figure below). We can see that the accuracy of our learner, based on the sentence_data does poorly in distinguishing between a statement a question or a command. One way in which we fixed this was through feeding it more relevant data to our learner. For instance, putting commands that will only work in Malmo such as "move to the tree" and avoid irrelevant commands such as "Make a backflip". By doing this we narrow down the amount of important data we feed to our classifier and we focus on increasing the probability for our learner to get commands correctly more specifically commands that are meant for malmo. Then, if we use a test data that has commands related to malmo we can observe that the accuracy will improove. Also, if you look at the most informative Features for our classifier notice that a lot of these features are not relevant to commands in Malmo except for "Move". If we are able to create a sentence_data that generates informative features that relate to Malmo commands, then we can expect our agent to have a higher accuracy when identifying commands.If Malmo was more complex to the point where we can perform any sort of action like a backflip or make the agent laugh then it would be important to create a huge training data structure.
 
 <img src="http://farm5.staticflickr.com/4244/34800409321_00b86d568c_b.jpg">
 <br>
 <h4>Features</h4>
 <img src="http://farm5.staticflickr.com/4267/34891960246_9a7b450c5c_b.jpg">
 
+
 As we improved our sentence_data(Training data) and as we train our classifier to have more relevance to possible Malmo commands we notice that the accuracy of our Naive Bayes classifier increased. The reason for this is because when we run the classifier with the test data, it is accurate when distingishing a command from any other type of sentence.(Look at the figure below).
 
 <img src="http://farm5.staticflickr.com/4195/34891619076_aaa70f8c6b_b.jpg">
 <img src="http://farm5.staticflickr.com/4198/34891641866_b69ca92d0c_b.jpg">
 
-
+<h4>Finite Machine Implementation</h4>
 As we mentioned before, getting our agent to correctly classify a sentence was our first issue. Then, our next step was to get our agent to only accept proper structured English sentences. This implementation is necessary for our agent to avoid incorrect sentence structure like, “Go the please to tree” which the correct way to write this is, “Please go to the tree”. 
 
 The first step to this implementation was to first extract the Part of Speech tagger for each word in the sentence. To do this we used the tagger function from nltk tools that takes in a string as an argument and returns a list of tuples with the word being the first element in the tuple and the tag being the second element in the tuple. Also, for our implementation purposes we focused on extracting the action/verb and the object/noun in order to be able to execute the command. This will be explained in more details later in the evaluation part of the status report. 
@@ -148,6 +149,22 @@ Input = Please go to the park.
 
 
 <img src="http://farm5.staticflickr.com/4196/34148291393_dfb31f35be_b.jpg">
+
+
+<h4>Object Classifier</h4>
+At this point our agent is able to understand commands and be able to see if the structure of the sentence is correct. The next step Is for our agent to be able to classify an object. Let assume in a Minecraft environment, there is an object such as a red block positioned a few blocks away from our agent, and then the user writes a command : “Go to the red block”. The user is well aware of what a red block is, however for the agent it is difficult to understand the meaning of a red block. Also, the red block might not be called a red block in Malmo but instead its called “redstone_block”.
+
+Similar to how we implemented the classifier for identifying commands, we do the same for all the items inside the selected environment. 
+<img src="http://farm5.staticflickr.com/4245/34117134764_f0c2b7ebea_b.jpg">
+
+For our project, As of now we are only using two items in the environment for our final report we intend to add more objects to the environment. These two items are the “redstone_block” and the “emerald_block”. 
+<img src="http://farm5.staticflickr.com/4274/34117136754_d21bd239c4_b.jpg">
+
+The reason why we haven’t manually generated more data for the object classifier is because we are trying to change it into an automated way to classify an object. This is because unlike the sentence classifier, where there is only three things to distinguish, for the object classifier we have to accumulate a lot of data in order for it to distinguish all the items in Malmo. 
+
+
+<h4>Actuator</h4>
+For the actuator, we have implemented the Dijkstra’s algorithm to find the shortest path to the objects. Also, we have a grid loader functions that allows us to know the position of all the objects in the environment. We also implemented a function that allows us to update the position of our agent. The implementation is similar to the one in assignment 1. Also, there are times a simple command such as “Make a right” might cause the agent to fall from an edge if there isn’t a block on the right of the agent, but thanks to the grid loader we are able to let the agent know the possible position in which he cant make a move. Furthermore, as we all know once we ended up in the red stone the mission would end, we change the mission to allows to continue to make actions even after we got to the red block. The changes we made to this algorithm was to update our starting position every time we move to a different destination. For the final report we intend to implement the rest of the actions such as “jump”, “Cut”, and etc. 
 
 
 
