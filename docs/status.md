@@ -183,8 +183,6 @@ For the actuator, we have implemented the Dijkstra’s algorithm to find the sho
   </ul>
 
 <h4>Video</h4>
-  Below is the link for our video:
-  https://www.youtube.com/watch?v=_DVMI3RfZIY&feature=youtu.be
-
-
 <iframe width="560" height="315" src="https://www.youtube.com/embed/_DVMI3RfZIY" frameborder="0" allowfullscreen></iframe>
+
+From the video we showed some of the current actions that our agent can take, however there is a lot of room for improvement, such as adding more items and be able to perform more actions. In fact, some of our current failure cases is that our agent is able to classify on object but not is not very accurate. For instance, our agent could go to red block, even if the user tells the agent to move to the “red Horse”. This is some of the few things we have to improve on too make our agent smarter.
