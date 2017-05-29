@@ -111,7 +111,7 @@ This is the implemented transition function.
 <img src="http://farm5.staticflickr.com/4267/34570066340_9ff2f84257_b.jpg">
 It return a 5, 6, or 7 if the command structure is approved.
 
-<img src="http://farm5.staticflickr.com/4251/34570065290_57a0577cbc_b.jpg">
+<img src="http://farm5.staticflickr.com/4227/34570067250_4ec302c223_b.jpg">
 It returns a “0” if the deterministic finite machine doesn’t accept the structure.
 
 
