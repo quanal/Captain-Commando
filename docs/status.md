@@ -125,21 +125,28 @@ It returns a “0” if the deterministic finite machine doesn’t accept the st
 
 The DFA machine takes a string and a list of verbs that is taken from a file that stores all the possible verbs in the English language. Then, it splits the string and adds the POS tags to each word. This is necessary because the verb is replaced by the actual word, same thing occurs to the noun. The DFA runs the split string and if the objects matches the order of the alphabet then it will return a 5,6,7 meaning it’s the correct structure. Otherwise, it returns a 0.
 
+
 <h4>Lets take a look at a run.</h4>
 
 Input = Please go to the park.
 
 Step 1: The sentence is split and the POS Tags are added to each word.
 
+
 <img src="http://farm5.staticflickr.com/4226/34571265890_c80281eda1_b.jpg">
+
 
 Step 2: Then, we check if the word ‘go’ is in verb.txt.
 
+
 Step 3:  The DFA takes in the user input and splits it, then it runs the input in the finite machine.
+
 
 <img src="http://farm5.staticflickr.com/4270/34918158676_887966828a_b.jpg">
 
+
 Step 4: returns 6
+
 
 <img src="http://farm5.staticflickr.com/4196/34148291393_dfb31f35be_b.jpg">
 
