@@ -6,11 +6,11 @@ title:  Team
 # {{ page.title }}
 
 
-## USER 1
+## QUAN LE
 ***UCI Net ID***: quanal@uci.edu
 
-## USER 2
+## JOSE VARGAS
 ***UCI Net ID***: Jlvarga1@uci.edu
 
-## USER 3
+## CHUONG NGHIEM
 ***UCI Net ID***: cdnghiem@uci.edu
