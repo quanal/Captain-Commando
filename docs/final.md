@@ -11,7 +11,7 @@ title:  Final Report
 
 <h4>Environment</h4>
 
-<ul><b>These materials have been used in this project</b>
+<ul><b>These materials have been used in this project to create the environment and all items, blocks, and entities:</b>
   <li>Tutorial 5</li>
   <li>craft_work.py</li>
   <li>Homework assignments: 1 and 2</li>
@@ -19,6 +19,7 @@ title:  Final Report
 </ul>
 
 
+<br> As a initial plan, we need an environemnt with maze with air as gaps (to apply the finding shortest paths), and all other items added onto that same maze.  On the move to the final state, we did the following steps:
 <ul>
   <b>Build up the environment with various types of objects:</b>
     <ul>
