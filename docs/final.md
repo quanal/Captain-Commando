@@ -23,18 +23,18 @@ title:  Final Report
     <ul>
         Built up a maze with size of 80x80, with gap, walls surrounded<br/>
         <br/><li>Code</li>
-        <img src="http://farm5.staticflickr.com/4262/35079539232_e6a313a361_b.jpg">
+        <br/><img src="http://farm5.staticflickr.com/4262/35079539232_e6a313a361_b.jpg">
         
         <br/><li>Picture:</li>
-        <img src="http://farm5.staticflickr.com/4238/35205019196_d29a17defe_b.jpg">
+        <br/><img src="http://farm5.staticflickr.com/4238/35205019196_d29a17defe_b.jpg">
         
         <br/><br/>
         Added more bock types, such as stone, brown mushroon block, water block<br/>
         <br/><li>Code</li>
-        <img src="http://farm5.staticflickr.com/4244/35115539441_db38d744a6_b.jpg"><br/>
+        <br/><img src="http://farm5.staticflickr.com/4244/35115539441_db38d744a6_b.jpg">
         
         <br/><li>Picture:</li>
-        <img src="http://farm5.staticflickr.com/4227/35205250156_2b1254454c_b.jpg"><br/>
+        <br/><img src="http://farm5.staticflickr.com/4227/35205250156_2b1254454c_b.jpg">
         
         <br/><br/>
         
