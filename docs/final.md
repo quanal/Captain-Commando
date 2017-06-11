@@ -39,7 +39,7 @@ title:  Final Report
         <img src="http://farm5.staticflickr.com/4227/35205250156_2b1254454c_b.jpg">
         
         <br><br>
- this is the test
+ 
       </ul>
 </ul>
 
