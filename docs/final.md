@@ -25,7 +25,7 @@ title:  Final Report
         <img src="http://farm5.staticflickr.com/4262/35079539232_e6a313a361_b.jpg">
         
         <li>Picture:</li>
-        <img src="https://farm5.staticflickr.com/4238/35205019196_d29a17defe_m.jpg">
+        <img src="http://farm5.staticflickr.com/4238/35205019196_d29a17defe_b.jpg">
       </ul>
 
 </ul>
