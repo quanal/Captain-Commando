@@ -7,3 +7,4 @@
 -Jose: evaluation
 -Quan & Chuong: approach
 -Whole team: putting all of the above into the final code.
+-Whole team: Designing The website
