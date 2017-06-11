@@ -1,19 +1,19 @@
-<h2><b>Video</b></h2> 
+---
+layout: default
+title:  Final Report
+---
+
+## Video
+
+[![Description of the Video](https://img.youtube.com/vi/FI3aW0RabBg/0.jpg)](https://www.youtube.com/watch?v=FI3aW0RabBg)
+
+## Project Summary
 
 
-<h2><b>Project Summary</b></h2> 
+## Approaches
 
 
+## Evaluation
 
 
-<h2><b>Approaches</b></h2> 
-
-
-
-
-<h2><b>Evaluation</b></h2> 
-
-
-
-
-<h2><b>References</b></h2> 
+## References
