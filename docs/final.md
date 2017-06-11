@@ -20,11 +20,14 @@ title:  Final Report
 
 
 <ul><b>Build up the environment with various types of objects:</b>
-    <li>Built up a maze with size of 80x80, with gap, walls surrounded
-      
-      <pre><img src="http://farm5.staticflickr.com/4262/35079539232_e6a313a361_b.jpg"></pre>
-      <pre><img src="http://farm5.staticflickr.com/4262/35079539232_e6a313a361_b.jpg"></pre>
-    
+    <li>
+      <ul>Built up a maze with size of 80x80, with gap, walls surrounded
+        <li>Code</li>
+        <pre><img src="http://farm5.staticflickr.com/4262/35079539232_e6a313a361_b.jpg"></pre>
+        
+        <li>Picture:</li>
+        <pre><img src="http://farm5.staticflickr.com/4262/35079539232_e6a313a361_b.jpg"></pre>
+      </ul>
     </li>
 
 </ul>
