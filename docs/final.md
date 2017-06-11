@@ -9,7 +9,7 @@ title:  Final Report
 
 ## Project Summary
 
-<h2>Environment</h2>
+<h4>Environment</h4>
 
 <ul><b>These materials have been used in this project</b>
   <li>Tutorial 5</li>
@@ -22,10 +22,10 @@ title:  Final Report
 <ul><b>Build up the environment with various types of objects:</b>
     <ul>Built up a maze with size of 80x80, with gap, walls surrounded
         <li>Code</li>
-        <pre><img src="http://farm5.staticflickr.com/4262/35079539232_e6a313a361_b.jpg"></pre>
+        <img src="http://farm5.staticflickr.com/4262/35079539232_e6a313a361_b.jpg">
         
         <li>Picture:</li>
-        <pre><img src="https://farm5.staticflickr.com/4238/35205019196_d29a17defe_m.jpg"></pre>
+        <img src="https://farm5.staticflickr.com/4238/35205019196_d29a17defe_m.jpg">
       </ul>
 
 </ul>
