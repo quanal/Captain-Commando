@@ -1,0 +1,9 @@
+-Chuong: environment
+-Quan & Jose: DFA
+-Jose: classify (at the beginning then switch to DFA with recommendation by Professor)
+-Quan: Dijstra's shortest path 
+-Quan & Jose: text extraction (Jose: text extraction of textblob classify, Quan: text extraction of DFA)
+-Jose: gensim for classify object
+-Jose: evaluation
+-Quan & Chuong: approach
+-Whole team: putting all of the above into the final code.
