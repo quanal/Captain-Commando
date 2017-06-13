@@ -12,7 +12,7 @@ title:  Final Report
 ## Approaches
 <h4>Environment</h4>
 
-Environent plays an important role in our project since out agent relies heavily on the objects' names and their coordinates to defien where to go on the maze based on the shortest paths algorithms.  When building the environment for the agent to interact, there are 2 states that we have come across.
+Environent plays an important role in our project since out agent relies heavily on the objects' names and their coordinates to defien where to go on the maze based on the shortest paths algorithms.  Understand all neccessary items in the xml and apply them to our actual project took quite a bit time for us.  When building the environment for the agent to interact, there are 2 states:
 
 Status report state:
 - As we showed that in in the status report state, we can only have the maze (with biggger size added).
