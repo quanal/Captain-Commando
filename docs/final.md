@@ -12,6 +12,14 @@ title:  Final Report
 ## Approaches
 <h4>Environment</h4>
 
+Regarding to build the environment for the agent to interact, there are 2 states that we have come across.
+
+Status report state:
+- As we showed that in in the status report state, we can only have the maze (with biggger size added).
+
+Final state: 
+In the final state, we took some office hours with Professor to figure out how to add more items on the maze so that the agent can try its actions/movements:
+
 <ul><b>These materials have been used in this project to create the environment and all items, blocks, and entities:</b>
   <li>Tutorial 5</li>
   <li>craft_work.py</li>
@@ -32,11 +40,20 @@ Code:
 
 <br>Added more bock types, such as stone, brown mushroon block, water block
 <img src="http://farm5.staticflickr.com/4244/35115539441_db38d744a6_b.jpg">
+<br>
 <img src="http://farm5.staticflickr.com/4227/35205250156_2b1254454c_b.jpg">
 
 <br>Since hosue is not the typical block, item, or intity in the MineCraft game, we need to manually draw it on the maze.  There are 2 parts need to be built: roof and walls.  The final house that we added on the maze shown as below:
 <img src="http://farm5.staticflickr.com/4247/35157519921_fcd372813f_b.jpg">
+<br>
 <img src="http://farm5.staticflickr.com/4275/35121143702_7d4d37fa24_b.jpg">
+
+We also added many other types of items and entities onto the maze:
+<img src="http://farm5.staticflickr.com/4277/34900234660_eea9cdcee3_b.jpg">
+
+
+
+
 
 ## Evaluation
 
