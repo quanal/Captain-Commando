@@ -35,7 +35,8 @@ Code:
 <img src="http://farm5.staticflickr.com/4227/35205250156_2b1254454c_b.jpg">
 
 <br>Since hosue is not the typical block, item, or intity in the MineCraft game, we need to manually draw it on the maze.  There are 2 parts need to be built: roof and walls.  The final house that we added on the maze shown as below:
-Picture:<img src="http://farm5.staticflickr.com/4275/35121143702_7d4d37fa24_b.jpg">
+<img scr="http://farm5.staticflickr.com/4247/35157519921_fcd372813f_b.jpg">
+<img src="http://farm5.staticflickr.com/4275/35121143702_7d4d37fa24_b.jpg">
 
 ## Evaluation
 
