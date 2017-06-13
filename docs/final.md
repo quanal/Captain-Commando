@@ -60,3 +60,15 @@ We also added many other types of items and entities onto the maze:
 
 
 ## References
+
+Minecraft Wiki: 
+http://minecraft.gamepedia.com/Coordinates
+
+Xml schema for MineCraft's items:
+https://github.com/Microsoft/malmo/blob/master/Schemas/Types.xsd
+
+Minecraft XML Schema Documentation:
+http://microsoft.github.io/malmo/0.16.0/Schemas/MissionHandlers.html#element_ObservationFromRay
+
+
+
