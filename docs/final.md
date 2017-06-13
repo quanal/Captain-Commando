@@ -12,7 +12,7 @@ title:  Final Report
 ## Approaches
 <h4>Environment</h4>
 
-Regarding to build the environment for the agent to interact, there are 2 states that we have come across.
+Environent plays an important role in our project since out agent relies heavily on the objects' names and their coordinates to defien where to go on the maze based on the shortest paths algorithms.  When building the environment for the agent to interact, there are 2 states that we have come across.
 
 Status report state:
 - As we showed that in in the status report state, we can only have the maze (with biggger size added).
@@ -44,7 +44,8 @@ Code:
 <img src="http://farm5.staticflickr.com/4227/35205250156_2b1254454c_b.jpg">
 
 <br>Since hosue is not the typical block, item, or intity in the MineCraft game, we need to manually draw it on the maze.  There are 2 parts need to be built: roof and walls.  The final house that we added on the maze shown as below:
-<img src="http://farm5.staticflickr.com/4247/35157519921_fcd372813f_b.jpg">
+
+<br><img src="http://farm5.staticflickr.com/4247/35157519921_fcd372813f_b.jpg">
 <br>
 <img src="http://farm5.staticflickr.com/4275/35121143702_7d4d37fa24_b.jpg">
 
