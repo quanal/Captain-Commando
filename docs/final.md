@@ -67,7 +67,7 @@ We also added many other types of items and entities onto the maze:
 
 Our baseline for this project is to classify user input into command and non-command. For command, we want our Agent to perform simple command such as “go, go left, go right, go forward, go backward”. To classy find Command from user input, we’ve used two technique for this. The first Technique we use is text classifier NaiveBayesClassifier from textblob.classifiers library. To do this, we have to manually create a lot of data (picture of data). Such data as short sentence of “Command sentence” and “Non-Command sentence”. Pseudo code for this is :
  
-PICTURE OF ALGORITHM 1
+<br><img src="http://farm5.staticflickr.com/4239/34465306934_aeb524a955_b.jpg">
 
 The execute function will take verb and use movement dictionary to classify what type of verb. For example, “move, go to, reach” will be classified as “go”, “break, destroy, kill” will be classified as “attack”. 
 
@@ -90,8 +90,15 @@ Next stage, to improve performance of our A.I Agent, we upgrade our DFA so that 
 
 <br><img src="http://farm5.staticflickr.com/4205/34921459350_04fec4de42_b.jpg">
 
-Before, to recognize action, we use textblob library, but the problem is we have to generate data manually and it take so much time. Therefore we switch to use gensim library, library allow us to find the similar between 2 word or to find the synonym of words. 
+Before, to recognize action, we use textblob library, but the problem is we have to generate data manually and it take so much time. Therefore we switch to use gensim library, library allow us to find the similar between words.
 
+<br><img src="http://farm5.staticflickr.com/4260/34465398374_9c6af1267c_b.jpg">
+
+To execute command, we do the following general algorithm. 
+<br><img src="http://farm5.staticflickr.com/4279/35179412411_a53521c75e_b.jpg">
+
+In our dfa class, we extract information on the command as follow:.
+<br><img src="http://farm5.staticflickr.com/4205/35179412521_beb7050c49_b.jpg">
 
 ## Evaluation
 <h3><b>Qualitative:</b></h3>
