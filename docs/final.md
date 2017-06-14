@@ -10,14 +10,14 @@ title:  Final Report
 ## Project Summary
 
 ## Approaches
-<h4>Environment</h4>
+<h4><b>Environment: </b></h4>
 
 Environent plays an important role in our project since out agent relies heavily on the objects' names and their coordinates to defien where to go on the maze based on the shortest paths algorithms.  Understand all neccessary items in the xml and apply them to our actual project took quite a bit time for us.  When building the environment for the agent to interact, there are 2 states:
 
-Status report state:
+<h5>Status report state:</h5>
 - As we showed that in in the status report state, we can only have the maze (with biggger size added).
 
-Final state: 
+<h5>Final state:</h5>
 In the final state, we took some office hours with Professor to figure out how to add more items on the maze so that the agent can try its actions/movements:
 
 <ul><b>These materials have been used in this project to create the environment and all items, blocks, and entities:</b>
@@ -29,9 +29,8 @@ In the final state, we took some office hours with Professor to figure out how t
 
 As a initial plan, we need an environemnt with maze with air as gaps (to apply the finding shortest paths), and all other items added onto that same maze.  On the move to the final state, we did the following steps:
 
-Build up the environment with various types of objects:
-
-Built up a maze with size of 80x80, with gap, walls surrounded:
+Build up the environment with various types of objects.
+Built up a maze with size of 80x80, with gap, walls surrounded.
 
 <br>
 ''' + self.drawWalls() + '''	
@@ -58,7 +57,10 @@ Built up a maze with size of 80x80, with gap, walls surrounded:
 
 We also added many other types of items and entities onto the maze:
 <br>
-<img src="http://farm5.staticflickr.com/4277/34900234660_eea9cdcee3_b.jpg">
+<img src="http://farm5.staticflickr.com/4240/35132504122_9eb6391447_b.jpg">
+
+<br>
+<img src="http://farm5.staticflickr.com/4207/35258667256_67020a0276_b.jpg">
 
 ## Evaluation
 <h3><b>Qualitative:</b></h3>
