@@ -104,7 +104,7 @@ First, the test data is structures as follows,
 
 The key of the dictionary represents the input that will be passed to the POS tagger and the DFA. The value is the expected result for each method. 
 
-Quantitative 
+<h3><b>Quantitative:</b></h3>
 Performance 
 
 <br>
