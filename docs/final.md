@@ -31,8 +31,8 @@ As a initial plan, we need an environemnt with maze with air as gaps (to apply t
 
 Build up the environment with various types of objects:
 
-Built up a maze with size of 80x80, with gap, walls surrounded
-Code:
+Built up a maze with size of 80x80, with gap, walls surrounded:
+
 <br>
 ''' + self.drawWalls() + '''	
 
@@ -41,22 +41,24 @@ Code:
 
 
 <br>Added more bock types, such as stone, brown mushroon block, water block
+
+<br>
 <img src="http://farm5.staticflickr.com/4259/35258329776_7bc2528e60_b.jpg">
+
 <br>
 <img src="http://farm5.staticflickr.com/4235/35298581875_11a00077c5_b.jpg">
 
 <br>Since house is not a typical block, item, or entity in the MineCraft game, we have to manually draw it on the maze.  There are 2 parts of the house that we built separately: roof and walls.  The final house that we added on the maze shown as below:
 
-<br><img src="http://farm5.staticflickr.com/4240/35258280566_a90816ceb8_b.jpg">
 <br>
-<img src="http://farm5.staticflickr.com/4214/35168731801_7db704571d_b.jpg">
+<img src="http://farm5.staticflickr.com/4240/35258280566_a90816ceb8_b.jpg">
+
+<br>
+<img src="http://farm5.staticflickr.com/4200/35132287322_995375d58a_b.jpg">
 
 We also added many other types of items and entities onto the maze:
+<br>
 <img src="http://farm5.staticflickr.com/4277/34900234660_eea9cdcee3_b.jpg">
-
-
-
-
 
 ## Evaluation
 <h3><b>Qualitative:</b></h3>
