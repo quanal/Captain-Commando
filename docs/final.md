@@ -45,7 +45,7 @@ Code:
 
 <br>Since house is not a typical block, item, or entity in the MineCraft game, we have to manually draw it on the maze.  There are 2 parts of the house that we built separately: roof and walls.  The final house that we added on the maze shown as below:
 
-<br><img src="blob:https://www.flickr.com/88dd5ab5-d95d-4039-b3d7-8534825fa81d">
+<br><img src="http://farm5.staticflickr.com/4240/35258280566_a90816ceb8_b.jpg">
 <br>
 <img src="http://farm5.staticflickr.com/4214/35168731801_7db704571d_b.jpg">
 
