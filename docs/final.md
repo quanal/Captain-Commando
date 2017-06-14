@@ -33,15 +33,15 @@ Build up the environment with various types of objects:
 
 Built up a maze with size of 80x80, with gap, walls surrounded
 Code:
-<img src="http://farm5.staticflickr.com/4262/35079539232_e6a313a361_b.jpg">
+<img src="http://farm5.staticflickr.com/4213/35132237162_eaec20e20b_b.jpg">
 <br>
-<img src="http://farm5.staticflickr.com/4238/35205019196_d29a17defe_b.jpg">
+<img src="http://farm5.staticflickr.com/4283/35168828711_d1099543b6_b.jpg">
 
 
 <br>Added more bock types, such as stone, brown mushroon block, water block
-<img src="http://farm5.staticflickr.com/4244/35115539441_db38d744a6_b.jpg">
+<img src="http://farm5.staticflickr.com/4259/35258329776_7bc2528e60_b.jpg">
 <br>
-<img src="http://farm5.staticflickr.com/4227/35205250156_2b1254454c_b.jpg">
+<img src="http://farm5.staticflickr.com/4235/35298581875_11a00077c5_b.jpg">
 
 <br>Since house is not a typical block, item, or entity in the MineCraft game, we have to manually draw it on the maze.  There are 2 parts of the house that we built separately: roof and walls.  The final house that we added on the maze shown as below:
 
