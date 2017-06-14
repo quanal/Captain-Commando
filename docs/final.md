@@ -120,10 +120,10 @@ Using the 100 manually generated test data sentences we see that the finite mach
 
 
 <h3><b>Qualitative:</b></h3>
-Gemsin Word2Vec (Automated) vs Textblob Classifier (Manual)
+<h4><b>Gemsin Word2Vec (Automated) vs Textblob Classifier (Manual)</b></h4>
 Issue: Captain Commando relies on the classification of objects and actions. It is important for our learner to understand that “moving” is different from “jumping” and that a “block” is not the same as a “pig”, but also that ‘hoping’ means the same as ‘jump’.  In order for our agent to learn these difference and similarities, we used the Textblob classifier which allowed us to create a learner and feed it training data that was manually generated as a list of verbs and objects. (If you are interested in more information about this method, please go to the status report under evaluation). The issue with the use of Naïve Bayes Classifier was that it wasn’t as accurate and precise in classifying objects. For instance, let’s say we were to train our learner to classify objects such as an Emerald_block, then green block would work, however green horse would work too even though horse is not similar to a block. The issue with Naïve Bayes classifier is that it classifies depending on how often the word appears on the training data. Another issue is that we need to manually generate the training data, which becomes a problem when there are a lot of items in the environment.  
 
-Textblob Classifier (Manual)
+<h3><b>Textblob Classifier (Manual)</b></h3>
 Let’s take a close look at this issue, suppose that our training data is composed of the following,
 
 <br>
@@ -146,8 +146,7 @@ However, the issue is when we want to predict if something very unrelated to a b
 
 We can see that a green shark is classified as an emerald block which creates an issue because a shark is not the same as a block. This issue arises because our data only defines what those two objects are however it does not train the learner of things that are NOT considered a red stone or an emerald block. For this we have to generate more data that will define what is not an emerald block or a Redstone. 
 
-
-Solution: Gemsin Word2Vec (Automated)
+<h3><b>Solution: Gemsin Word2Vec (Automated)</b></h3>
 Gemsin Word2Vec is a tool that uses the GoogleNews-vectors-negative300.bin.gz file that generates a score of similarity between words. 
 Let’s take a look at a run, 
 
