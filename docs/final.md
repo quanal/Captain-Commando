@@ -73,7 +73,7 @@ The execute function will take verb and use movement dictionary to classify what
 
 Our second technique is to use Deterministic Finite Machine to classify command. Below is the picture of our first DFA.
 
-PICTURE OF LAST DFA
+<br><img src="http://farm5.staticflickr.com/4203/35309387515_78a08c1d5e_b.jpg">
 
 Our first DFA is simple. It only allow one action and one object without any adjectives support. The structure of our DFA is: (please) verb (go to) object, or (please) verb (forward/backward).
 
@@ -95,7 +95,7 @@ State 1 is for basic action such as "attack, go, jump...".
 
 State 5 and 7 is for moving in specific direction such as "forward, backward, left, right"
 
-State 6 is the most complex and powerful. It allow command to have multiple verb, multiple adjective described object. For example if the command is "Please go and find the left red stone". The command will be go into state 0 -> 1 -> 9 -> 1 -> 4 -> 8 -> 8 -> 6
+State 6 is the most complex and powerful. It allow command to have multiple verb, multiple adjective described object. For example if the command is "Please go and find the left red stone". The command will be go into state 0 -> 1 -> 9 -> 1 -> 4 -> 8 -> 8 -> 6 then will be accepted.
 
 Before, to recognize action, we use textblob library, but the problem is we have to generate data manually and it take so much time. Therefore we switch to use gensim library, library allow us to find the similar between words.
 
