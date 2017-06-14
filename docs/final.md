@@ -129,7 +129,7 @@ The finite state machine was used to help the agent filter out the sentences tha
 Here, is the finite machine that we built. It is different from the one that we presented in our status report. (in the approach explain more inn detail the new update.)
 
 <br>
-<img src="http://farm5.staticflickr.com/4251/35168960981_5c33b2244b_b.jpg">
+<img src="http://farm5.staticflickr.com/4256/35269053556_fec63529dc_b.jpg">
 
 As you can see from the finite state machine, the only accept states are {5,6,7,9,11,13}, meaning that out machine only accepts commands with the following patterns.
 Here are a few examples,
