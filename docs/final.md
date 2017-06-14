@@ -57,7 +57,18 @@ We also added many other types of items and entities onto the maze:
 
 
 ## Evaluation
+Qualitative:
+Part of Speech Tagger vs. Deterministic Finite Automaton Machine 
+Issue: Captain commando is an AI project that relies on the extraction of components in a sentence. For instance, to execute a command that is given as text by the user, our Agent has to be able to know the action that it will be performing. Maybe the action is to attack a sheep, or to find the nearest tree. To accomplish this, our agent must be able to split the sentence into words and correctly identify the verb, the adjective and the noun inside that sentence. What if the given text is not a command? As we explained in our status report our agent can distinguish between a command, question or a statement. Knowing this our agent would disregard any other forms sentences that are not commands.  Now, let’s analyze the two approaches that we have implemented for our agent to extract these three components in a sentence (Verb, Adjective, Noun).
 
+Part of Speech Tagger
+Part of speech tagger is a NLTK tool function that accepts a list of words as an input and returns a list of tuples. 
+Here is an example of an execution 
+<br><img src="http://farm5.staticflickr.com/4234/35168377281_6f27073853_b.jpg">
+
+Now, POS tagger was the tool that we initially used for our agent to get the verbs, adjectives and nouns. However, we started noticing that it wasn’t very accurate when detecting the three components. 
+Here is an example of an incorrect output of POS tagger,
+<br><img src="http://farm5.staticflickr.com/4284/34454444504_83521a11ef_b.jpg"> 
 
 ## References
 
