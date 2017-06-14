@@ -98,7 +98,6 @@ Let’s look at a look at the output of our state machine,
 <img src="http://farm5.staticflickr.com/4233/34454470054_9824325e1f_b.jpg">
 
 Notice that the input is the same as the POS tagger example, in this case pink was detected as the adjective and the finite machine also outputs the accepting state in which it terminated.
-
  
 <h4><b>Test</b></h4>
 Let’s compare how both methods compare to each other to see which one is more efficient in extracting the verb, adjective and the noun for a set of 100 sentences. 
@@ -118,10 +117,7 @@ The key of the dictionary represents the input that will be passed to the POS ta
 <br>
 <img src="blob:https://www.flickr.com/9f2bf1e1-2fe0-4cb9-9dea-7b723951932d">
 
-<br>
 Using the 100 manually generated test data sentences we see that the finite machine gets 78% correct while POS tagger only gets 34% correct. Keep in mind that the reason for this outcome is because most of the test data is constructed so that our state machine could accept the command. If we were to change the data in a way that our state machine won’t be able to accept it, then we would have a different outcome. However, since we are focusing on commands that would work on Malmo, we restrict the amount of sentence structure in order to get a better performance with our extractor. Another approach could be to update the finite machine to accept more complex commands.
-
-
 
 <h3><b>Qualitative:</b></h3>
 <h4><b>Gemsin Word2Vec (Automated) vs Textblob Classifier (Manual)</b></h4>
@@ -166,15 +162,9 @@ It compares the extracted verb to all the actions in Malmo and the extracted nou
 
 
 ## References
-
-Minecraft Wiki: 
-http://minecraft.gamepedia.com/Coordinates
-
-Xml schema for MineCraft's items:
-https://github.com/Microsoft/malmo/blob/master/Schemas/Types.xsd
-
-Minecraft XML Schema Documentation:
-http://microsoft.github.io/malmo/0.16.0/Schemas/MissionHandlers.html#element_ObservationFromRay
+Minecraft Wiki: http://minecraft.gamepedia.com/Coordinates
+Xml schema for MineCraft's items: https://github.com/Microsoft/malmo/blob/master/Schemas/Types.xsd
+Minecraft XML Schema Documentation: http://microsoft.github.io/malmo/0.16.0/Schemas/MissionHandlers.html#element_ObservationFromRay
 
 
 
