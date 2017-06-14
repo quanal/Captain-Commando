@@ -58,10 +58,10 @@ We also added many other types of items and entities onto the maze:
 
 ## Evaluation
 <h3><b>Qualitative:</b></h3>
-Part of Speech Tagger vs. Deterministic Finite Automaton Machine 
+<h4><b>Part of Speech Tagger vs. Deterministic Finite Automaton Machine:</b></h4>
 Issue: Captain commando is an AI project that relies on the extraction of components in a sentence. For instance, to execute a command that is given as text by the user, our Agent has to be able to know the action that it will be performing. Maybe the action is to attack a sheep, or to find the nearest tree. To accomplish this, our agent must be able to split the sentence into words and correctly identify the verb, the adjective and the noun inside that sentence. What if the given text is not a command? As we explained in our status report our agent can distinguish between a command, question or a statement. Knowing this our agent would disregard any other forms sentences that are not commands.  Now, let’s analyze the two approaches that we have implemented for our agent to extract these three components in a sentence (Verb, Adjective, Noun).
 
-Part of Speech Tagger
+<h4><b>Part of Speech Tagger</b></h4>
 Part of speech tagger is a NLTK tool function that accepts a list of words as an input and returns a list of tuples. 
 Here is an example of an execution 
 <br><img src="http://farm5.staticflickr.com/4234/35168377281_6f27073853_b.jpg">
@@ -73,7 +73,7 @@ Here is an example of an incorrect output of POS tagger,
 Notice how the command is very similar to the previous example, in fact the only thing that is different is the color of the car. However, the output indicates that there is no adjective and the POS tagger classified ‘pink’ as a noun and not an adjective.
 
 <br>
-Deterministic Finite Automaton Machine
+<h4><b>Deterministic Finite Automaton Machine</b></h4>
 The finite state machine was used to help the agent filter out the sentences that were classified as commands but did not have the proper English sentence structure (if you are interested in reading about this, go to the status report under evaluation). We made use of this Non-Deterministic Finite Automaton Machine to perform the same task as a POS tagger, but in a more efficient way. 
 Here, is the finite machine that we built. It is different from the one that we presented in our status report. (in the approach explain more inn detail the new update.)
 
@@ -95,7 +95,8 @@ Let’s look at a look at the output of our state machine,
 
 Notice that the input is the same as the POS tagger example, in this case pink was detected as the adjective and the finite machine also outputs the accepting state in which it terminated.
 
-Test 
+ 
+<h4><b>Test</b></h4>
 Let’s compare how both methods compare to each other to see which one is more efficient in extracting the verb, adjective and the noun for a set of 100 sentences. 
 First, the test data is structures as follows,
 
@@ -105,7 +106,7 @@ First, the test data is structures as follows,
 The key of the dictionary represents the input that will be passed to the POS tagger and the DFA. The value is the expected result for each method. 
 
 <h3><b>Quantitative:</b></h3>
-Performance 
+<h4><b>Performance:</b></h4>
 
 <br>
 <img src="http://farm5.staticflickr.com/4274/35298271455_d395458f38_b.jpg">
@@ -117,7 +118,8 @@ Performance
 Using the 100 manually generated test data sentences we see that the finite machine gets 78% correct while POS tagger only gets 34% correct. Keep in mind that the reason for this outcome is because most of the test data is constructed so that our state machine could accept the command. If we were to change the data in a way that our state machine won’t be able to accept it, then we would have a different outcome. However, since we are focusing on commands that would work on Malmo, we restrict the amount of sentence structure in order to get a better performance with our extractor. Another approach could be to update the finite machine to accept more complex commands.
 
 
-Qualitative:
+
+<h3><b>Qualitative:</b></h3>
 Gemsin Word2Vec (Automated) vs Textblob Classifier (Manual)
 Issue: Captain Commando relies on the classification of objects and actions. It is important for our learner to understand that “moving” is different from “jumping” and that a “block” is not the same as a “pig”, but also that ‘hoping’ means the same as ‘jump’.  In order for our agent to learn these difference and similarities, we used the Textblob classifier which allowed us to create a learner and feed it training data that was manually generated as a list of verbs and objects. (If you are interested in more information about this method, please go to the status report under evaluation). The issue with the use of Naïve Bayes Classifier was that it wasn’t as accurate and precise in classifying objects. For instance, let’s say we were to train our learner to classify objects such as an Emerald_block, then green block would work, however green horse would work too even though horse is not similar to a block. The issue with Naïve Bayes classifier is that it classifies depending on how often the word appears on the training data. Another issue is that we need to manually generate the training data, which becomes a problem when there are a lot of items in the environment.  
 
