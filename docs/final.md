@@ -57,7 +57,7 @@ We also added many other types of items and entities onto the maze:
 
 
 ## Evaluation
-Qualitative:
+<h3><b>Qualitative:</b></h3>
 Part of Speech Tagger vs. Deterministic Finite Automaton Machine 
 Issue: Captain commando is an AI project that relies on the extraction of components in a sentence. For instance, to execute a command that is given as text by the user, our Agent has to be able to know the action that it will be performing. Maybe the action is to attack a sheep, or to find the nearest tree. To accomplish this, our agent must be able to split the sentence into words and correctly identify the verb, the adjective and the noun inside that sentence. What if the given text is not a command? As we explained in our status report our agent can distinguish between a command, question or a statement. Knowing this our agent would disregard any other forms sentences that are not commands.  Now, let’s analyze the two approaches that we have implemented for our agent to extract these three components in a sentence (Verb, Adjective, Noun).
 
@@ -138,9 +138,26 @@ If we were to run some test data on our learner, to see if it knows the differen
 <img src="http://farm5.staticflickr.com/4254/34488459083_eebce01c7a_b.jpg">
 
 However, the issue is when we want to predict if something very unrelated to a block is classified as one of those two items in the training data, for instance,
+
 <br>
 <img src="http://farm5.staticflickr.com/4255/34454642324_40fac44449_b.jpg">
 
+We can see that a green shark is classified as an emerald block which creates an issue because a shark is not the same as a block. This issue arises because our data only defines what those two objects are however it does not train the learner of things that are NOT considered a red stone or an emerald block. For this we have to generate more data that will define what is not an emerald block or a Redstone. 
+
+
+Solution: Gemsin Word2Vec (Automated)
+Gemsin Word2Vec is a tool that uses the GoogleNews-vectors-negative300.bin.gz file that generates a score of similarity between words. 
+Let’s take a look at a run, 
+
+<br>
+<img src="http://farm5.staticflickr.com/4282/35298428015_897b2fff02_b.jpg">
+
+The input is “go to the river” and using the finite state machine mentioned earlier in this report, it extracts the verb and the noun of the input command. Then, using the ‘similarity’ function from gensim.models.word2vec,
+
+<br>
+<img src="http://farm5.staticflickr.com/4285/35168600181_5562ab884a_b.jpg">
+
+It compares the extracted verb to all the actions in Malmo and the extracted noun to all the objects in the Malmo environment. We make use of these results to obtain the item with the highest similarity score. Now, how does this help solve the issue that was previously stated? As you can see from the results, for the verb ‘go’, the Malmo action that had the highest similarity score was “move”. As for the object “river”, the highest similarity score was from the item “water”. This is very important for our agent because an object such as a green horse won’t have a high similarity score for the Malmo object “block”.
 
 
 ## References
