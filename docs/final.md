@@ -117,7 +117,7 @@ The key of the dictionary represents the input that will be passed to the POS ta
 <img src="http://farm5.staticflickr.com/4274/35298271455_d395458f38_b.jpg">
 
 <br>
-<img src="blob:https://www.flickr.com/9f2bf1e1-2fe0-4cb9-9dea-7b723951932d">
+<img src="https://www.flickr.com/9f2bf1e1-2fe0-4cb9-9dea-7b723951932d">
 
 Using the 100 manually generated test data sentences we see that the finite machine gets 78% correct while POS tagger only gets 34% correct. Keep in mind that the reason for this outcome is because most of the test data is constructed so that our state machine could accept the command. If we were to change the data in a way that our state machine won’t be able to accept it, then we would have a different outcome. However, since we are focusing on commands that would work on Malmo, we restrict the amount of sentence structure in order to get a better performance with our extractor. Another approach could be to update the finite machine to accept more complex commands.
 
