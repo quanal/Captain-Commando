@@ -110,6 +110,27 @@ Performance
 <br>
 <img src="http://farm5.staticflickr.com/4274/35298271455_d395458f38_b.jpg">
 
+<br>
+<img src="blob:https://www.flickr.com/9f2bf1e1-2fe0-4cb9-9dea-7b723951932d">
+
+<br>
+Using the 100 manually generated test data sentences we see that the finite machine gets 78% correct while POS tagger only gets 34% correct. Keep in mind that the reason for this outcome is because most of the test data is constructed so that our state machine could accept the command. If we were to change the data in a way that our state machine won’t be able to accept it, then we would have a different outcome. However, since we are focusing on commands that would work on Malmo, we restrict the amount of sentence structure in order to get a better performance with our extractor. Another approach could be to update the finite machine to accept more complex commands.
+
+
+Qualitative:
+Gemsin Word2Vec (Automated) vs Textblob Classifier (Manual)
+Issue: Captain Commando relies on the classification of objects and actions. It is important for our learner to understand that “moving” is different from “jumping” and that a “block” is not the same as a “pig”, but also that ‘hoping’ means the same as ‘jump’.  In order for our agent to learn these difference and similarities, we used the Textblob classifier which allowed us to create a learner and feed it training data that was manually generated as a list of verbs and objects. (If you are interested in more information about this method, please go to the status report under evaluation). The issue with the use of Naïve Bayes Classifier was that it wasn’t as accurate and precise in classifying objects. For instance, let’s say we were to train our learner to classify objects such as an Emerald_block, then green block would work, however green horse would work too even though horse is not similar to a block. The issue with Naïve Bayes classifier is that it classifies depending on how often the word appears on the training data. Another issue is that we need to manually generate the training data, which becomes a problem when there are a lot of items in the environment.  
+
+Textblob Classifier (Manual)
+Let’s take a close look at this issue, suppose that our training data is composed of the following,
+
+<br>
+<img src="http://farm5.staticflickr.com/4247/34488379663_343a713357_b.jpg">
+
+Notice, that the list of tuples has some of the different types of names that can be considered an “emerald_block” or a “redstone_block”. Let’s feed this training data to out learner using Naïve Bayes classifier as showed as follows,
+
+<br>
+<img src="http://farm5.staticflickr.com/4207/35168499671_fdfc72071c_b.jpg">
 
 
 ## References
