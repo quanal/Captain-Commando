@@ -132,6 +132,16 @@ Notice, that the list of tuples has some of the different types of names that ca
 <br>
 <img src="http://farm5.staticflickr.com/4207/35168499671_fdfc72071c_b.jpg">
 
+If we were to run some test data on our learner, to see if it knows the difference between a red stone and an emerald stone it will get it correct because those are the two items that were classified in our training data. For example,
+
+<br>
+<img src="http://farm5.staticflickr.com/4254/34488459083_eebce01c7a_b.jpg">
+
+However, the issue is when we want to predict if something very unrelated to a block is classified as one of those two items in the training data, for instance,
+<br>
+<img src="http://farm5.staticflickr.com/4255/34454642324_40fac44449_b.jpg">
+
+
 
 ## References
 
