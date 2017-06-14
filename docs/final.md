@@ -33,6 +33,7 @@ Build up the environment with various types of objects:
 
 Built up a maze with size of 80x80, with gap, walls surrounded
 Code:
+<br>
 ''' + self.drawWalls() + '''	
 
 <br>
