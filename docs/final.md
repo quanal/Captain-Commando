@@ -162,9 +162,9 @@ It compares the extracted verb to all the actions in Malmo and the extracted nou
 
 
 ## References
-Minecraft Wiki: http://minecraft.gamepedia.com/Coordinates
-Xml schema for MineCraft's items: https://github.com/Microsoft/malmo/blob/master/Schemas/Types.xsd
-Minecraft XML Schema Documentation: http://microsoft.github.io/malmo/0.16.0/Schemas/MissionHandlers.html#element_ObservationFromRay
+Minecraft Wiki: http://minecraft.gamepedia.com/Coordinates<br>
+Xml schema for MineCraft's items: https://github.com/Microsoft/malmo/blob/master/Schemas/Types.xsd<br>
+Minecraft XML Schema Documentation: http://microsoft.github.io/malmo/0.16.0/Schemas/MissionHandlers.html#element_ObservationFromRay<br>
 
 
 
