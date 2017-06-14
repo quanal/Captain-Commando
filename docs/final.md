@@ -70,6 +70,38 @@ Now, POS tagger was the tool that we initially used for our agent to get the ver
 Here is an example of an incorrect output of POS tagger,
 <br><img src="http://farm5.staticflickr.com/4284/34454444504_83521a11ef_b.jpg"> 
 
+Notice how the command is very similar to the previous example, in fact the only thing that is different is the color of the car. However, the output indicates that there is no adjective and the POS tagger classified ‘pink’ as a noun and not an adjective.
+
+<br>
+Deterministic Finite Automaton Machine
+The finite state machine was used to help the agent filter out the sentences that were classified as commands but did not have the proper English sentence structure (if you are interested in reading about this, go to the status report under evaluation). We made use of this Non-Deterministic Finite Automaton Machine to perform the same task as a POS tagger, but in a more efficient way. 
+Here, is the finite machine that we built. It is different from the one that we presented in our status report. (in the approach explain more inn detail the new update.)
+
+<br>
+<img src="blob:https://www.flickr.com/60475818-b694-4718-82e2-b752857c4b4b">
+As you can see from the finite state machine, the only accept states are {5,6,7,9,11,13}, meaning that out machine only accepts commands with the following patterns.
+Here are a few examples,
+•	Please “Verb” to the “Noun”
+•	“Verb” to the “Noun”
+•	“Verb” to the “Adjective” “Noun”
+•	“Verb” a/an/the “Noun”
+•	“Verb” a/an/the “Adjective” “Noun”
+The reason why we structured it that way was because most of the Malmo commands start with the verb and they are followed by the adjective and lastly, the noun. Again, this was to avoid commands like, “red car go to the”, which are an improper structure of an English sentence. 
+Let’s look at a look at the output of our state machine, 
+
+<br>
+<img src="http://farm5.staticflickr.com/4233/34454470054_9824325e1f_b.jpg">
+
+Notice that the input is the same as the POS tagger example, in this case pink was detected as the adjective and the finite machine also outputs the accepting state in which it terminated.
+
+Test 
+Let’s compare how both methods compare to each other to see which one is more efficient in extracting the verb, adjective and the noun for a set of 100 sentences. 
+First, the test data is structures as follows,
+
+<br>
+<img src="http://farm5.staticflickr.com/4241/35131867982_518e028f2c_b.jpg">
+
+
 ## References
 
 Minecraft Wiki: 
