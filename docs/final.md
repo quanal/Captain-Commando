@@ -85,10 +85,17 @@ PICTURE OF DATA OF TEXTBLOB and output
 <br><img src="http://farm5.staticflickr.com/4264/35179250131_b11b18e9a6_b.jpg">
 
 
-
 Next stage, to improve performance of our A.I Agent, we upgrade our DFA so that it allow the command to be more complex. We add state 9 and state 8 to the DFA to allow our DFA accept command with multiple verb and multiple adjective. Also we connect state 5 to state 6 so we can allow command with ‘position object’. 
 
-<br><img src="http://farm5.staticflickr.com/4205/34921459350_04fec4de42_b.jpg">
+<br><img src="http://farm5.staticflickr.com/4256/35269053556_fec63529dc_b.jpg">
+
+In our DFA, there are 4 acceptance state : 1,5,6,7. 
+
+State 1 is for basic action such as "attack, go, jump...".
+
+State 5 and 7 is for moving in specific direction such as "forward, backward, left, right"
+
+State 6 is the most complex and powerful. It allow command to have multiple verb, multiple adjective described object. For example if the command is "Please go and find the left red stone". The command will be go into state 0 -> 1 -> 9 -> 1 -> 4 -> 8 -> 8 -> 6
 
 Before, to recognize action, we use textblob library, but the problem is we have to generate data manually and it take so much time. Therefore we switch to use gensim library, library allow us to find the similar between words.
 
