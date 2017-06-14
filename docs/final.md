@@ -8,7 +8,8 @@ title:  Final Report
 [![Description of the Video](https://img.youtube.com/vi/FI3aW0RabBg/0.jpg)](https://www.youtube.com/watch?v=FI3aW0RabBg)
 
 ## Project Summary
-
+  Our goal of this project remains the same: using natural language processing to control the A.I agent to do thing that we want. In specific we want to our A.I agent be able to execute from simple command such as “go, jump, go left, go right …” to more complex command such as “go to a specific location, break something…” To do this we use the Deterministic Finite Automata machine to take input from use and check if the input is valid. 
+  
 ## Approaches
 <h4><b>Environment: </b></h4>
 
@@ -61,6 +62,18 @@ We also added many other types of items and entities onto the maze:
 
 <br>
 <img src="http://farm5.staticflickr.com/4207/35258667256_67020a0276_b.jpg">
+
+<h4><b>Algorithm: </b></h4>
+
+Our baseline for this project is to classify user input into command and non-command. For command, we want our Agent to perform simple command such as “go, go left, go right, go forward, go backward”. To classy find Command from user input, we’ve used two technique for this. The first Technique we use is text classifier NaiveBayesClassifier from textblob.classifiers library. To do this, we have to manually create a lot of data (picture of data). Such data as short sentence of “Command sentence” and “Non-Command sentence”. Pseudo code for this is :
+ 
+Take user input
+*Put input into learner*
+*If learner == ‘Command’:*
+	*Use nltk.pos_tag to get the part of speech of each word*
+	*Extract verb and object from the command*
+	*Execute(verb,object)*
+
 
 ## Evaluation
 <h3><b>Qualitative:</b></h3>
