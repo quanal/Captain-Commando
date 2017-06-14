@@ -67,12 +67,30 @@ We also added many other types of items and entities onto the maze:
 
 Our baseline for this project is to classify user input into command and non-command. For command, we want our Agent to perform simple command such as “go, go left, go right, go forward, go backward”. To classy find Command from user input, we’ve used two technique for this. The first Technique we use is text classifier NaiveBayesClassifier from textblob.classifiers library. To do this, we have to manually create a lot of data (picture of data). Such data as short sentence of “Command sentence” and “Non-Command sentence”. Pseudo code for this is :
  
-Take user input
-*Put input into learner*
-*If learner == ‘Command’:*
-	*Use nltk.pos_tag to get the part of speech of each word*
-	*Extract verb and object from the command*
-	*Execute(verb,object)*
+PICTURE OF ALGORITHM 1
+
+The execute function will take verb and use movement dictionary to classify what type of verb. For example, “move, go to, reach” will be classified as “go”, “break, destroy, kill” will be classified as “attack”. 
+
+Our second technique is to use Deterministic Finite Machine to classify command. Below is the picture of our first DFA.
+
+PICTURE OF LAST DFA
+
+Our first DFA is simple. It only allow one action and one object without any adjectives support. The structure of our DFA is: (please) verb (go to) object, or (please) verb (forward/backward).
+
+To classify the meaning of word, we first use NaiveBayesClassifier from textblob.classifiers library. Just as the command, we manually create data for the classifier to learn and test it using different words that have similar meaning. 
+
+PICTURE OF DATA OF TEXTBLOB and output
+<br><img src="http://farm5.staticflickr.com/4279/34921459270_8e2922b31e_b.jpg">
+
+<br><img src="http://farm5.staticflickr.com/4264/35179250131_b11b18e9a6_b.jpg">
+
+
+
+Next stage, to improve performance of our A.I Agent, we upgrade our DFA so that it allow the command to be more complex. We add state 9 and state 8 to the DFA to allow our DFA accept command with multiple verb and multiple adjective. Also we connect state 5 to state 6 so we can allow command with ‘position object’. 
+
+<br><img src="http://farm5.staticflickr.com/4205/34921459350_04fec4de42_b.jpg">
+
+Before, to recognize action, we use textblob library, but the problem is we have to generate data manually and it take so much time. Therefore we switch to use gensim library, library allow us to find the similar between 2 word or to find the synonym of words. 
 
 
 ## Evaluation
