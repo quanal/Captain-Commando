@@ -98,9 +98,17 @@ State 5 and 7 is for moving in specific direction such as "forward, backward, le
 
 State 6 is the most complex and powerful. It allow command to have multiple verb, multiple adjective described object. For example if the command is "Please go and find the left red stone". The command will be go into state 0 -> 1 -> 9 -> 1 -> 4 -> 8 -> 8 -> 6 then will be accepted.
 
-Before, to recognize action, we use textblob library, but the problem is we have to generate data manually and it take so much time. Therefore we switch to use gensim library, library allow us to find the similar between words.
+At first, to recognize action, we use textblob library to train our data, but the problem is we have to generate data manually and it take so much time. 
 
 <br><img src="http://farm5.staticflickr.com/4260/34465398374_9c6af1267c_b.jpg">
+
+Therefore we switch to use gensim library, library allow us to find the similar between words. For example with two command "Go to the green stone" and "Break the wall". First we find the most similar basic action with the one in command then we find the most similar object that on the map with the object that in the command.
+
+<br><img src="http://farm5.staticflickr.com/4230/35269606286_266f0dec07_b.jpg">
+
+<br><img src="http://farm5.staticflickr.com/4240/35143138872_4c84df26ec_b.jpg">
+
+
 
 To execute command, we do the following general algorithm. 
 <br><img src="http://farm5.staticflickr.com/4279/35179412411_a53521c75e_b.jpg">
