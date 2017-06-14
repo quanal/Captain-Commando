@@ -33,7 +33,8 @@ Build up the environment with various types of objects:
 
 Built up a maze with size of 80x80, with gap, walls surrounded
 Code:
-<img src="http://farm5.staticflickr.com/4213/35132237162_eaec20e20b_b.jpg">
+''' + self.drawWalls() + '''	
+
 <br>
 <img src="http://farm5.staticflickr.com/4283/35168828711_d1099543b6_b.jpg">
 
