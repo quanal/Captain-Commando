@@ -79,6 +79,7 @@ Here, is the finite machine that we built. It is different from the one that we 
 
 <br>
 <img src="blob:https://www.flickr.com/60475818-b694-4718-82e2-b752857c4b4b">
+
 As you can see from the finite state machine, the only accept states are {5,6,7,9,11,13}, meaning that out machine only accepts commands with the following patterns.
 Here are a few examples,
 •	Please “Verb” to the “Noun”
@@ -100,6 +101,15 @@ First, the test data is structures as follows,
 
 <br>
 <img src="http://farm5.staticflickr.com/4241/35131867982_518e028f2c_b.jpg">
+
+The key of the dictionary represents the input that will be passed to the POS tagger and the DFA. The value is the expected result for each method. 
+
+Quantitative 
+Performance 
+
+<br>
+<img src="http://farm5.staticflickr.com/4274/35298271455_d395458f38_b.jpg">
+
 
 
 ## References
