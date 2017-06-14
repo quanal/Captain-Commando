@@ -6,6 +6,7 @@ title:  Final Report
 ## Video
 
 [![Description of the Video](https://img.youtube.com/vi/FI3aW0RabBg/0.jpg)](https://www.youtube.com/watch?v=rQd7vvLrs8o&t=3s)
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=rQd7vvLrs8o&t=3s" frameborder="0" allowfullscreen></iframe>
 
 ## Project Summary
   Our goal of this project remains the same: using natural language processing to control the A.I agent to do thing that we want. In specific we want to our A.I agent be able to execute from simple command such as “go, jump, go left, go right …” to more complex command such as “go to a specific location, break something…” To do this we use the Deterministic Finite Automata machine to take input from use and check if the input is valid. 
